@@ -1,0 +1,45 @@
+<div class="menu-right clearfix">
+  <div class="menu-block active" data-ng-if="showMenu">
+    <ul class="menu-wrap" data-ng-class="{'visitor' : userData.isGuest}">
+      <li>
+        <a href="/user/profile" data-ng-if="!userData.isGuest">
+          <div class="user-links">Profile Settings<i class="fa fa-gear"></i></div>
+        </a>
+      </li>
+      <li>
+        <div class="user-links" data-ng-if="!userData.isGuest" data-ng-click="logout()">Log out<i class="fa fa-sign-out"></i></div>
+      </li>
+      <li>
+        <a data-ng-if="!ownerDetails" href="/incentivisation/owner-details">
+          <div class="menu-links">CASH COUNTER</div>
+        </a>
+      </li>
+      <li>
+        <a href="/careers" target="_blank">
+          <div class="menu-links">WE ARE HIRING</div>
+        </a>
+      </li>
+      <li>
+        <a href="/contact" target="_blank">
+          <div class="menu-links">CONTACT US</div>
+        </a>
+      </li>
+      <li>
+        <a href="http://grabhouse.com/urbancocktail/" target="_blank">
+          <div class="menu-links">URBAN COCKTAIL</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="nav-toggle" ng-click="toggle()" ng-class="{'active':!userData.isGuest}">
+    <div class="header-user" ng-class="{'hidden':userData.isGuest}">
+      <div class="user-img"><img src={{userData.avatarUrl}} alt="{{userData.displayName}}"></div>
+      <span class="user-name-header" style="text-transform:capitalize;">{{userData.displayName}}</span>
+    </div>
+    <div class="bar-wrap">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,178 @@
+<!-- @TODO : Temporary style for map -->
+<style>
+.map {
+  width: 100%;
+  height: 500px;
+}
+</style>
+<div class="moreinfo-page">
+  <div class="basic-header">
+    <div class="max-container clearfix">
+      <div class="basic-block">
+        <h4>{{::param}}</h4>
+        <h1 data-ng-bind="::listingInfo.details.title"></h1>
+        <h2 data-ng-bind="::addrLine1"></h2>
+        <h2 data-ng-bind="::addrLine2"></h2>
+      </div>
+      <div class="owner-basic">
+        <div class="details">
+          <div class="name" data-ng-bind="::listingInfo.details.owner.name.split(' ')[0]"></div>
+          <div class="tag" data-ng-bind="::(check.PG?'PG Owner, '+listingInfo.details.owner.gender:'Owner, '+listingInfo.details.owner.gender)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="action-bar clearfix">
+    <div class="max-container">
+      <div class="breadcrumb-bar">
+        <a class="crumb-link" href="javascript:void(0);" data-ng-bind="::listingInfo.details.city"></a>
+        <span class="fa fa-angle-right"></span>
+        <a class="crumb-link" href="javascript:void(0);" data-ng-bind="::locationArr[locationArr.length-4]"></a>
+        <span class="fa fa-angle-right"></span>
+        <a class="crumb-link" href="javascript:void(0);" data-ng-bind="::listingInfo.details.category"></a>
+      </div>
+      <gh-report-listing showHead="true"></gh-report-listing>
+    </div>
+  </div>
+  <div class="content-block">
+    <div class="max-container clearfix">
+      <div class="actions-block clearfix">
+        <div class="circles-outer">
+          <gh-short-list-icon> </gh-short-list-icon>
+          <gh-social-share></gh-social-share>
+          <gh-contact-owner-btn></gh-contact-owner-btn>
+          <gh-contact-owner></gh-contact-owner>
+        </div>
+      </div>
+      <div class="details-block" data-ng-class="::{'handpicked':listingInfo.details.isExclusive && listingInfo.details.category=='PG'}">
+        <span class="handpicked__text">HANDPICKED</span>
+        <span class="handpicked__img"></span>
+        <label data-ng-bind="::listingInfo.details.category.toUpperCase()+' TYPE'"></label>
+        <div class="house-type" data-ng-bind="::check.PG?listingInfo.details.pgType:listingInfo.details.flatType"></div>
+        <div class="row float-block">
+          <div class="col-xs-6">
+            <label data-ng-bind="::'RENT'+ (check.ROOM?' PER PERSON':' PER MONTH')"></label>
+            <div class="house-rent" data-ng-bind="::'Rs. '+(listingInfo.details.rent)|ghformatmoney"></div>
+          </div>
+          <div class="col-xs-6">
+            <label>SECURITY DEPOSIT</label>
+            <div class="house-budget" data-ng-bind="::'Rs. '+(listingInfo.details.deposit)|ghformatmoney"></div>
+          </div>
+        </div>
+        <label data-ng-if="::check.ROOM">ROOM TYPE</label>
+        <div class="default-val" data-ng-if="::check.ROOM" data-ng-bind="::listingInfo.details.roomType"></div>
+        <label>AVAILABLE FOR</label>
+        <div class="default-val" data-ng-bind="::check.ROOM?listingInfo.details.owner.gender.join(' & ')+' Roommate':check.PG?listingInfo.details.workType.join(' | '):listingInfo.details.familyType.join(' | ')"></div>
+        <label data-ng-if="::(!check.PG && listingInfo.details.furnishType)">FURNISHING STATUS</label>
+        <div class="default-val" data-ng-if="::(!check.PG && listingInfo.details.furnishType)" data-ng-bind="::listingInfo.details.furnishType"></div>
+        <div data-ng-if="::(!check.PG)">
+          <label>AVAILABLE FROM</label>
+          <div class="default-val" data-ng-bind="::(listingInfo.details.availableFrom)|ghtimeformat"></div>
+        </div>
+        <div class="row float-block" style="margin-bottom:15px" data-ng-if="::listingInfo.details.minimumStay">
+          <div class="col-xs-6">
+            <label>MINIMUM TIME TO STAY</label>
+            <div class="default-val" data-ng-bind="::'N/A'"></div>
+          </div>
+          <div class="col-xs-6">
+            <label>NOTICE PERIOD</label>
+            <div class="default-val" data-ng-bind="::'N/A'"></div>
+          </div>
+        </div>
+        <label>ADDRESS</label>
+        <div class="default-val house-address" data-ng-bind="::listingInfo.details.location.name"></div>
+        <label>LANDMARK</label>
+        <div class="default-val" data-ng-bind="::listingInfo.details.landmark"></div>
+      </div>
+      <div class="right-block">
+        <div class="photos-block">
+          <div class="head clearfix" data-ng-if="::listingInfo.details.hasImage">PHOTOS<span class="all-photos" data-ng-click="changeIndex(0)">View all photos</span></div>
+          <div class="house-photos clearfix" data-ng-if="::listingInfo.details.hasImage">
+            <div class="col-xs-4" data-ng-repeat="slide in ::(listingInfo.photos | limitTo:6) track by $index">
+              <img ng-src="{{slide.url.medium}}" alt="" modalaction="open" modaltimeout="1000" data-ng-click="changeIndex($index)" />
+            </div>
+          </div>
+          <div class="photos-modal" data-ng-class="{'m-show' : slideshow}">
+            <div class="pm-content" data-ng-click="sliderClose()">
+              <div class="pm-close">&times;</div>
+              <div class="pm-head">Photos</div>
+              <div class="clearfix">
+                <div class="thumbs-container">
+                  <div class="photo-thumb" ng-repeat="slide in ::listingInfo.photos track by $index">
+                    <img ng-src="{{::slide.url.medium}}" alt="" data-id="listingInfo.photos.indexOf(slide)" data-ng-click="changeIndex($index)" />
+                  </div>
+                </div>
+                <div class="modal-right">
+                  <uib-carousel interval="3000" class="carousel-block" gh-disable-animation>
+                    <uib-slide ng-repeat="slide in ::listingInfo.photos track by $index" active="slide.active">
+                      <img ng-src="{{::slide.url.large}}" style="margin: auto;">
+                      <div class="carousel-num"><span data-ng-bind="::($index + 1)"></span> &nbsp;of&nbsp; <span data-ng-bind="::listingInfo.photos.length"></span></div>
+                    </uib-slide>
+                  </uib-carousel>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="description-block">
+            <div class="head">DESCRIPTION</div>
+            <div class="text-content" style="text-align: justify" data-ng-bind="(listingInfo.description)|ghhtmltoplaintext">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="amenities-block clearfix">
+    <div class="max-container">
+      <gh-amenities showAll="true"></gh-amenities>
+    </div>
+  </div>
+  <!-- start:dsMap HTML -->
+  <ds-map>
+    <ds-map-view class="map" ds-map-settings="mapObject"></ds-map-view>
+    <ds-map-places>
+      <uib-accordion close-others="oneAtATime">
+        <uib-accordion-group heading="Transportation">
+          <ds-places-type types="{'bus_station':1,'airport':2,'train_station':2}"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Restaurants and Bars">
+          <ds-places-type types="['restaurant']"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Schools/Colleges">
+          <ds-places-type types="{'university':3,'school':2}"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Hospitals">
+          <ds-places-type types="['hospital']"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Pharmacies">
+          <ds-places-type types="['pharmacy']"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Shopping Malls">
+          <ds-places-type types="{'shopping_mall':2,'grocery_or_supermarket':2,'department_store':1}"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Gardens and Recreation">
+          <ds-places-type types="{'amusement_park':2,'art_gallery':1,'zoo':1,'museum':1}"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Movie Halls">
+          <ds-places-type types="['movies']" sort-option="radius" radius="5000"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="ATMs">
+          <ds-places-type types="['atm']"></ds-places-type>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Gas Stations">
+          <ds-places-type types="['gas_station']"></ds-places-type>
+        </uib-accordion-group>
+      </uib-accordion>
+    </ds-map-places>
+  </ds-map>
+  <!-- end:dsMap HTML -->
+  <!-- start:Places Service Template -->
+  <script type="text/ng-template" id="dsMapPlaces.html">
+    <div>
+      <div ng-repeat="place in Places | limitTo:5" ng-mouseover="showDirection()" ds-within-bounds>
+        <div ng-bind="place.name"></div>
+      </div>
+    </div>
+  </script>
+  <!-- end:Places Service Template -->
+</div>

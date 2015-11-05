@@ -1,0 +1,10 @@
+<div class="news-wrap">
+    <div class="wrapper">
+        <h2 class="news-title">News we made!</h2>
+        <ul class="clearfix">
+            <li ng-repeat="n in ::staticData.data.news track by $index">
+                <a title="{{::n.name}}" class="press-release {{::n.identifier}}" target="_blank" href="{{::n.url}}" rel="nofollow"></a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "angular-direction-service",
+  "dependencies": {
+    "angular": "^1.3.0"
+  },
+  "homepage": "https://github.com/JesselJohn/angular-direction-service",
+  "authors": [
+    "Jessel John <jesseljohn130@gmail.com>"
+  ],
+  "description": "Google Maps direction service for nearby places from a location",
+  "main": "src/dsMapService.js",
+  "keywords": [
+    "angular",
+    "google maps",
+    "nearby places",
+    "direction service"
+  ],
+  "license": "MIT",
+  "ignore": [],
+  "_release": "c1ca7520e3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c1ca7520e3a930fd92d5ea4afa39e993014c21b1"
+  },
+  "_source": "git://github.com/JesselJohn/angular-direction-service.git",
+  "_target": "*",
+  "_originalSource": "angular-direction-service"
+}

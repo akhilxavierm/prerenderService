@@ -1,0 +1,109 @@
+<div class="notification-outer" data-ng-class="{'active': showNotification, 'bubble':showBubble}" ng-click="toggleNotification()">
+  <div class="notification-link">
+    <span data-ng-class="count > 0 ? 'n-active': 'n-inactive'"></span>
+    <span class="num" data-ng-bind="count"></span>
+  </div>
+  <div class="notification-wrap">
+    <div class="notification-scroll ps-container">
+      <div class="notification-inner">
+        <span class="notification-num" data-ng-if="authenticated"><span class="new-num">{{count}} New notification</span> {{leads}} Contacts left</span>
+        <div ng-hide="notification.length === 0" data-ng-repeat="balloonObject in notifications track by $index">
+          <div ng-show="getStatus($index)" data-ng-if="authenticated" class="notification-date">{{balloonObject.addedOn | ghdateformat}}</div>
+          <div class="notification-item yellow" data-ng-class="{'read':balloonObject.status}" data-ng-click="handleClick(balloonObject)" data-ng-if="balloonObject.type === 1">
+            <span class="time" ng-init="a = getDate(balloonObject.addedOn)">{{ a | ghtimeformat}}</span>
+            <div class="nicon-outer">
+              <div class="fa fa-pencil"></div>
+            </div>
+            <div class="n-content">
+              <div class="n-reg" data-ng-bind="::balloonObject.content.text.head"></div>
+              <div class="gh-bold" data-ng-bind="::balloonObject.content.text.body"></div>
+            </div>
+          </div>
+          <div class="notification-item yellow" data-ng-class="{'read':balloonObject.status}" ng-click="handleClick(obj)" ng-if="balloonObject.type === 2">
+            <span class="time" ng-init="a = getDate(balloonObject.addedOn)">{{ a | ghtimeformat}}</span>
+            <div class="nicon-outer">
+              <div class="fa fa-pencil"></div>
+            </div>
+            <div class="n-content">
+              <div class="n-head" data-ng-bind="balloonObject.content.text.head"></div>
+              <div class="n-bold" data-ng-bind="balloonObject.content.text.body"></div>
+            </div>
+          </div>
+          <div class="notification-item green" data-ng-class="{'read':balloonObject.status}" ng-click="handleClick(obj)" ng-if="balloonObject.type === 4">
+            <span class="time" ng-init="a = getDate(balloonObject.addedOn)">{{ a | ghtimeformat}}</span>
+            <div class="nicon-outer">
+              <div class="fa fa-phone"></div>
+            </div>
+            <div class="n-content">
+              <div class="n-head" data-ng-bind="balloonObject.content.text.head"></div>
+              <div class="n-reg house-head" data-ng-bind="balloonObject.content.text.body"></div>
+              <div class="n-semibold"><span class="n-bold">Rs. {{balloonObject.content.text.footer.rent | ghformatmoney}}</span> per month
+                <!-- <span class="divider">|</span>{{balloonObject.content.text.footer.location | ghlocationformat}} -->
+              </div>
+            </div>
+          </div>
+          <div class="notification-item red" data-ng-class="{'read':balloonObject.status}" ng-click="handleClick(obj)" ng-if="balloonObject.type === 9">
+            <span class="time" ng-init="a = getDate(balloonObject.addedOn)">{{ a | ghtimeformat}}</span>
+            <div class="nicon-outer">
+              <div class="fa fa-heart"></div>
+            </div>
+            <div class="n-content">
+              <div class="n-head" data-ng-bind="balloonObject.content.text.head"></div>
+              <div class="n-reg house-head" data-ng-bind="balloonObject.content.text.body"></div>
+              <div class="n-semibold"><span class="n-bold">Rs. {{balloonObject.content.text.footer.rent | ghformatmoney}}</span> per month
+                <!-- <span class="divider">|</span> {{balloonObject.content.text.footer.location | ghlocationformat}} -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="notification-bubble">
+    <div class="notification-item yellow" data-ng-click="handleClick(balloonObject)" data-ng-if="::(balloonObject.type === 1)">
+      <span class="time"></span>
+      <div class="nicon-outer">
+        <div class="fa fa-pencil"></div>
+      </div>
+      <div class="n-content">
+        <div class="n-reg" data-ng-bind="::balloonObject.content.text.head"></div>
+        <div class="gh-bold" data-ng-bind="::balloonObject.content.text.body"></div>
+      </div>
+    </div>
+    <div class="notification-item yellow" data-ng-click="handleClick(balloonObject)" data-ng-if="balloonObject.type === 2">
+      <span class="time"></span>
+      <div class="nicon-outer">
+        <div class="fa fa-pencil"></div>
+      </div>
+      <div class="n-content">
+        <div class="n-head" data-ng-bind="balloonObject.content.text.head"></div>
+        <div class="n-bold" data-ng-bind="balloonObject.content.text.body"></div>
+      </div>
+    </div>
+    <div class="notification-item green" data-ng-click="handleClick(balloonObject)" data-ng-if="balloonObject.type === 4">
+      <div class="nicon-outer">
+        <span class="time"></span>
+        <div class="fa fa-check"></div>
+      </div>
+      <div class="n-content">
+        <div class="n-reg" data-ng-bind="balloonObject.content.text.head"></div>
+        <div class="n-reg house-head" data-ng-bind="balloonObject.content.text.body"></div>
+        <div class="n-semibold"><span class="n-bold">Rs. {{balloonObject.content.text.footer.rent | ghformatmoney}}</span> per month
+          <!-- <span class="divider">|</span>{{balloonObject.content.text.footer.location | ghLocation}} -->
+        </div>
+      </div>
+    </div>
+    <div class="notification-item red" data-ng-click="handleClick(balloonObject)" data-ng-if="balloonObject.type === 9">
+      <div class="nicon-outer">
+        <div class="fa fa-heart"></div>
+      </div>
+      <div class="n-content">
+        <div class="n-head" data-ng-bind="balloonObject.content.text.head"></div>
+        <div class="n-reg house-head" data-ng-bind="balloonObject.content.text.body"></div>
+        <div class="n-semibold"><span class="n-bold">Rs. {{balloonObject.content.text.footer.rent | ghformatmoney}}</span> per month
+          <!-- <span class="divider">|</span> {{balloonObject.content.text.footer.location | ghLocation}} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

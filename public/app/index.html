@@ -1,0 +1,132 @@
+<!doctype html>
+<!-- Enable appcache in production environment -->
+<!-- <html manifest="/grabhouse.appcache" type="text/cache-manifest"> -->
+<html>
+
+<head>
+  <link rel="dns-prefetch" href="//maps.googleapis.com">
+  <link rel="dns-prefetch" href="//maps.gstatic.com">
+  <link rel="dns-prefetch" href="//mts0.googleapis.com">
+  <link rel="dns-prefetch" href="//mts1.googleapis.com">
+  <link rel="dns-prefetch" href="//res.cloudinary.com">
+  <meta charset="utf-8">
+  <base href="/" />
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/ng-scrollbar/dist/ng-scrollbar.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/landing.css">
+  <!-- endbuild -->
+</head>
+
+<body ng-app="waoApp" ng-strict-di>
+  <gh-header></gh-header>
+  <!-- Add your site or application content here -->
+  <div ng-view="">
+  </div>
+  <gh-footer></gh-footer>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+  ! function(A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+  </script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.19&libraries=places,geometry&sensor=false"></script>
+  <script src="scripts/services/template-cache-worker.js"></script>
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/cycle-js/cycle.js"></script>
+  <script src="bower_components/angular-state-handler/src/stateHandler.js"></script>
+  <script src="bower_components/angular-local-storage-gh/index.js"></script>
+  <script src="bower_components/ngAutocomplete/src/ngAutocomplete.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/gh-static-content/app.js"></script>
+  <script src="bower_components/ng-scrollbar/dist/ng-scrollbar.js"></script>
+  <script src="bower_components/angular-direction-service/src/dsMapService.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/search.js"></script>
+  <script src="scripts/controllers/payment.js"></script>
+  <script src="scripts/controllers/contact.js"></script>
+  <script src="scripts/controllers/careers.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/sitemap.js"></script>
+  <script src="scripts/controllers/policy.js"></script>
+  <script src="scripts/controllers/unsubscribe.js"></script>
+  <script src="scripts/controllers/notfound.js"></script>
+  <script src="scripts/controllers/servererror.js"></script>
+  <script src="scripts/controllers/resetpassword.js"></script>
+  <script src="scripts/directives/ghheader.js"></script>
+  <script src="scripts/directives/ghfooter.js"></script>
+  <script src="scripts/directives/ghmenu.js"></script>
+  <script src="scripts/directives/ghsocialshare.js"></script>
+  <script src="scripts/directives/ghtermsandconditions.js"></script>
+  <script src="scripts/directives/ghprivacy.js"></script>
+  <script src="scripts/directives/ghlistsearch.js"></script>
+  <script src="scripts/directives/ghmapsearch.js"></script>
+  <script src="scripts/directives/ghcommute.js"></script>
+  <script src="scripts/directives/ghforgotpassword.js"></script>
+  <script src="scripts/directives/ghprofile.js"></script>
+  <script src="scripts/directives/ghauth.js"></script>
+  <script src="scripts/directives/ghsocialsignin.js"></script>
+  <script src="scripts/directives/ghoverlay.js"></script>
+  <script src="scripts/controllers/listyourproperty.js"></script>
+  <script src="scripts/filters/ghdateformat.js"></script>
+  <script src="scripts/services/mixpanel.js"></script>
+  <script src="scripts/services/search.js"></script>
+  <script src="scripts/services/contactservice.js"></script>
+  <script src="scripts/services/listyourpropservice.js"></script>
+  <script src="scripts/services/listingresults.js"></script>
+  <script src="scripts/directives/ghcontactdetails.js"></script>
+  <script src="scripts/services/commonfactorymethods.js"></script>
+  <script src="scripts/directives/ghpaginationblock.js"></script>
+  <script src="scripts/services/authentication.js"></script>
+  <script src="scripts/services/socialauth.js"></script>
+  <script src="scripts/directives/ghreportlisting.js"></script>
+  <script src="scripts/directives/ghcontactowner.js"></script>
+  <script src="scripts/directives/ghamenities.js"></script>
+  <script src="scripts/directives/ghshortlisticon.js"></script>
+  <script src="scripts/filters/ghformatmoney.js"></script>
+  <script src="scripts/filters/ghtimeformat.js"></script>
+  <script src="scripts/filters/ghhtmltoplaintext.js"></script>
+  <script src="scripts/controllers/moreinfo.js"></script>
+  <script src="scripts/directives/ghdisableanimation.js"></script>
+  <script src="scripts/directives/ghautocomplete.js"></script>
+  <script src="scripts/directives/ghnotifications.js"></script>
+  <script src="scripts/directives/ghfilter.js"></script>
+  <script src="scripts/services/shortlistservice.js"></script>
+  <script src="scripts/services/reportlisting.js"></script>
+  <script src="scripts/services/googlemap.js"></script>
+  <script src="scripts/services/userdata.js"></script>
+  <script src="scripts/directives/ghslider.js"></script>
+  <script src="scripts/services/sitemap.js"></script>
+  <script src="scripts/directives/ghcontactownerbtn.js"></script>
+  <script src="scripts/services/templatecache.js"></script>
+  <script src="scripts/directives/ghautocompletelocal.js"></script>
+  <script src="scripts/services/notification.js"></script>
+  <script src="scripts/directives/ghcashcounter.js"></script>
+  <!-- endbuild -->
+
+</html>

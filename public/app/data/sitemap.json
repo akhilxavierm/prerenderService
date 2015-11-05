@@ -1,0 +1,143 @@
+[{
+  "header": "AREAS WE SERVE",
+  "cities": [{
+    "name": "BANGALORE",
+    "key": "bangalore",
+    "url": "/sitemap-bangalore",
+    "areas": [{
+      "name": "Arakere",
+      "url": "/house-PG-flat-for-rent-in-arakere-bangalore-4701d1e085"
+    }, {
+      "name": "Banashankari",
+      "url": "/house-PG-flat-for-rent-in-banashankari-bangalore-a09e52189e"
+    }, {
+      "name": "Begur",
+      "url": "/house-PG-flat-for-rent-in-begur-bangalore-1e3763e8ec"
+    }, {
+      "name": "Bellandur",
+      "url": "/house-PG-flat-for-rent-in-bellandur-bangalore-70d5cc6e0a"
+    }]
+  }, {
+    "name": "MUMBAI",
+    "key": "mumbai",
+    "url": "/sitemap-mumbai",
+    "areas": [{
+      "name": "Airoli",
+      "url": "/house-PG-flat-for-rent-in-airoli-mumbai-9bc8039f30"
+    }, {
+      "name": "Bandra",
+      "url": "/house-PG-flat-for-rent-in-bandra-east-mumbai-e56473bcf8"
+    }, {
+      "name": "Bhandup West",
+      "url": "/house-PG-flat-for-rent-in-bhandup-west-mumbai-9815db21be"
+    }, {
+      "name": "Churchgate",
+      "url": "/house-PG-flat-for-rent-in-churchgate-mumbai-270bdda0da"
+    }]
+  }]
+}, {
+  "header": "FLATS",
+  "cities": [{
+    "name": "FLATS IN BANGALORE",
+    "key": "bangalore",
+    "areas": [{
+      "name": "House for rent in Arakere",
+      "url": "/flat-house-for-rent-in-arakere-bangalore-aa009e8d9f"
+    }, {
+      "name": "House for rent in Banashankari",
+      "url": "/flat-house-for-rent-in-banashankari-bangalore-8b9aa74c57"
+    }, {
+      "name": "House for rent in Begur",
+      "url": "/flat-house-for-rent-in-begur-bangalore-69daad9925"
+    }, {
+      "name": "House for rent in Bellandur",
+      "url": "/flat-house-for-rent-in-bellandur-bangalore-742776624f"
+    }]
+  }, {
+    "name": "FLATS IN MUMBAI",
+    "key": "mumbai",
+    "areas": [{
+      "name": "House for rent in Airoli",
+      "url": "/lat-house-for-rent-in-airoli-mumbai-2b99bad079"
+    }, {
+      "name": "House for rent in Bandra East",
+      "url": "/flat-house-for-rent-in-bandra-east-mumbai-94e26ffc5b"
+    }, {
+      "name": "House for rent in Bhandup West",
+      "url": "/flat-house-for-rent-in-bhandup-west-mumbai-521c83aa38"
+    }, {
+      "name": "House for rent in Churchgate",
+      "url": "/flat-house-for-rent-in-churchgate-mumbai-618077e034"
+    }]
+  }]
+}, {
+  "header": "PAYING GUESTS",
+  "cities": [{
+    "name": "PG IN BANGALORE",
+    "key": "bangalore",
+    "areas": [{
+      "name": "PG in Banashankari",
+      "url": "/PG-in-banashankari-bangalore-99db560dfb"
+    }, {
+      "name": "PG in Basaveshwara Nagar",
+      "url": "/PG-in-basaveshwara-nagar-bangalore-25e005b6ce"
+    }, {
+      "name": "PG in Bellandur",
+      "url": "/PG-in-bellandur-bangalore-6b7d312eef"
+    }, {
+      "name": "PG in Brookefield",
+      "url": "/PG-in-brookefield-bangalore-92a8991a0b"
+    }]
+  }, {
+    "name": "PG IN MUMBAI",
+    "key": "mumbai",
+    "areas": [{
+      "name": "PG in Airoli",
+      "url": "/PG-in-airoli-mumbai-ce066ae23f"
+    }, {
+      "name": "PG in Andheri East",
+      "url": "/PG-in-andheri-east-mumbai-52e33e3afb"
+    }, {
+      "name": "PG in Andheri West",
+      "url": "/PG-in-andheri-west-mumbai-11031fe1a0"
+    }, {
+      "name": "PG in Bandra East",
+      "url": "/PG-in-bandra-east-mumbai-12b9e75510"
+    }]
+  }]
+}, {
+  "header": "ROOMS AND ROOMATES",
+  "cities": [{
+    "name": "ROOMS IN BANGALORE",
+    "key": "bangalore",
+    "areas": [{
+      "name": "Rooms for rent in Armane Nagar",
+      "url": "/Roommate-room-for-rent-in-armane-nagar-bangalore-64a6d80de0"
+    }, {
+      "name": "Rooms for rent in Banaswadi",
+      "url": "/Roommate-room-for-rent-in-banaswadi-bangalore-0dfcec6292"
+    }, {
+      "name": "Rooms for rent in Basaveshwara Nagar",
+      "url": "/Roommate-room-for-rent-in-basaveshwara-nagar-bangalore-d23ce3fe75"
+    }, {
+      "name": "Rooms for rent in Bellandur",
+      "url": "/Roommate-room-for-rent-in-bellandur-bangalore-b63ee2a171"
+    }]
+  }, {
+    "name": "ROOMS IN MUMBAI",
+    "key": "mumbai",
+    "areas": [{
+      "name": "Rooms for rent in Airoli",
+      "url": "/Roommate-room-for-rent-in-airoli-mumbai-9e0a708447"
+    }, {
+      "name": "Rooms for rent in Andheri East",
+      "url": "/Roommate-room-for-rent-in-andheri-east-mumbai-c4f93c1928"
+    }, {
+      "name": "Rooms for rent in Andheri West",
+      "url": "/Roommate-room-for-rent-in-andheri-west-mumbai-2126436836"
+    }, {
+      "name": "Rooms for rent in Bandra East",
+      "url": "/Roommate-room-for-rent-in-bandra-east-mumbai-15119d5a79"
+    }]
+  }]
+}]

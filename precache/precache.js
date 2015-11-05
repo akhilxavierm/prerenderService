@@ -27,28 +27,42 @@ module.exports = function() {
 
 //make calls to recived urls for to get cached
 function preCacheCall(allUrls) {
-  clearRedis(allUrls[urlCount]);
+  for (var i = 0; i < 5; i++) {
+    urlCount = i;
+    singlePreCacheCall(urlCount, allUrls);
+  }
+
+}
+
+function singlePreCacheCall(count, allUrls) {
+  console.log("count-----" + count);
+  console.log("url_count-" + urlCount);
+  clearRedis(allUrls[count]);
   request({
     headers: {
       'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:24.0) Gecko/20100101 Firefox/24.0'
     },
 
-    uri: 'http://localhost:3000' + allUrls[urlCount],
+    uri: 'http://localhost:3000' + allUrls[count],
     method: 'GET'
   }, function(error, response, body) {
-    console.log("response status--" + response.statusCode);
+    /* console.log(": " + body.length + " characters, " +
+       Buffer.byteLength(body, 'utf8') + " bytes");
+     console.log("response status--" + response.statusCode);*/
     if (!error && response.statusCode == 200) {
+      console.log("success count--" + count);
+      console.log("success url_count--" + urlCount);
       urlCount++;
-      console.log("url conutn succes--" + (urlCount - 1));
       if (urlCount < allUrls.length) {
-        preCacheCall(allUrls);
+        singlePreCacheCall(urlCount, allUrls);
+      } else {
+        urlCount--;
       }
 
     } else {
-      console.log("url conutn error--" + urlCount);
-      if (urlCount < allUrls.length) {
-        preCacheCall(allUrls);
-      }
+      console.log("error count--" + count);
+      console.log("error url_count--" + urlCount);
+      singlePreCacheCall(count, allUrls);
     }
   });
 }
@@ -56,6 +70,6 @@ function preCacheCall(allUrls) {
 //clearing cached snapshots from redis
 function clearRedis(urlToClear) {
   client.del(urlToClear, function(err, reply) {
-    console.log(reply + "---------" + urlToClear);
+    //console.log(reply + "---------" + urlToClear);
   });
 }

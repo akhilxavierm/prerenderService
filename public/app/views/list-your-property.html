@@ -1,0 +1,107 @@
+<div class="list-img-wrap">
+  <div class="list-grey-layer">
+    <div class="list-back-img">
+      <div class="list-grey-layer">
+        <div class="list-back" ng-controller="ListYourPropertyController">
+          <div class="list-content-wrap">
+            <section class="list-left-content">
+              <h1>Bring your property online</h1>
+              <p>Please share your details and schedule your call with us</p>
+              <div class="why-list">Why list your property on Grabhouse?</div>
+              <ul class="list-benefits">
+                <li>
+                  <i class="list-icon1"></i>
+                  <span>Brokerfree transactions with complete transparency.</span>
+                </li>
+                <li>
+                  <i class="list-icon2"></i>
+                  <span>Dedicated support from an expert.</span>
+                </li>
+                <li>
+                  <i class="list-icon3"></i>
+                  <span>Suitable tenant options for you.</span>
+                </li>
+              </ul>
+            </section>
+            <div id="listProp" class="list-right-content">
+              <div class="list-scenario1" data-ng-if="!submitSuccess">
+                <form name="lPForm" novalidate>
+                  <div class="list-prop-form">
+                    <div class="form-group">
+                      <label>Your name</label>
+                      <input type="text" class="form-control" name="name" placeholder="Enter your full name" tabindex="301" ng-model="name" ng-pattern="/[a-zA-Z0-9]$/" maxlength="15" required />
+                      <span data-ng-if="lPForm.name.$dirty || formError">
+                                <span class="help-block" data-ng-if="lPForm.name.$error.required" data-ng-bind="::formErrorMsgs.name.required"></span>
+                      <span class="help-block" data-ng-if="lPForm.name.$error.pattern" data-ng-bind="::formErrorMsgs.name.pattern"></span>
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label>Mobile number</label>
+                      <div class="input-group">
+                        <span class="input-group-addon">+91</span>
+                        <input type="text" class="form-control" placeholder="Enter your mobile number" name="mobile" tabindex="302" ng-model="mobile" minlength="10" maxlength="10" ng-pattern="/^[7|8|9][0-9]{9}$/" required />
+                        <span data-ng-if="lPForm.mobile.$dirty || formError ">
+                                    <span class="help-block" data-ng-if="lPForm.mobile.$error.required" data-ng-bind="::formErrorMsgs.mobile.required"></span>
+                        <span class="help-block" data-ng-if="lPForm.mobile.$error.minlength" data-ng-bind="::formErrorMsgs.mobile.length"></span>
+                        <span class="help-block" data-ng-if="lPForm.mobile.$error.maxlength" data-ng-bind="::formErrorMsgs.mobile.length"></span>
+                        <span class="help-block" data-ng-if="lPForm.mobile.$error.pattern" data-ng-bind="::formErrorMsgs.mobile.pattern"></span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Property type</label>
+                      <div class="property-wrap clearfix">
+                        <label class="radio-type-flat">
+                          <input id="list-property-flat" type="radio" name="listPropertyType" ng-model="propertyType" value="1" tabindex="303" checked/>
+                          <span>FULL FLAT</span>
+                        </label>
+                        <label class="radio-type-room">
+                          <input type="radio" name="listPropertyType" tabindex="303" id="list-property-room" ng-model="propertyType" value="3" />
+                          <span>ROOMMATES</span>
+                        </label>
+                        <label class="radio-type-pg">
+                          <input type="radio" name="listPropertyType" tabindex="303" id="list-property-pg" ng-model="propertyType" value="2" />
+                          <span>PG</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Building name</label>
+                      <input type="text" class="form-control" name="bName" placeholder="Enter the building name" tabindex="304" ng-model="bName" ng-pattern="/[a-zA-Z0-9]$/" maxlength="50" required>
+                      <span data-ng-if="lPForm.bName.$dirty || formError">
+                                <span class="help-block" data-ng-if="lPForm.bName.$error.required" data-ng-bind="::formErrorMsgs.bName.required"></span>
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label>Area/Locality</label>
+                      <div class="input-wrap">
+                        <input type="text" placeholder="Type Enter locality or area" class="form-control" name="area" ng-model="autocomplete" ng-autocomplete="results" details="details" options="options" autocomplete="off" tabindex="305" required/>
+                        <span class="fa fa-map-marker"></span>
+                      </div>
+                      <span data-ng-if="lPForm.area.$dirty || formError">
+                                <span class="help-block" data-ng-if="lPForm.area.$error.required" data-ng-bind="::formErrorMsgs.area.required"></span>
+                      </span>
+                    </div>
+                    <div class="btn-wrap">
+                      <button class="gh-btn list-property-btn" ng-click="submitPropertyDetails(lPForm.$valid)">REQUEST CALLBACK</button>
+                    </div>
+                  </div>
+                </form>
+                <div class="call-option">
+                  <div class="call-circle"><i class="fa fa-phone"></i></div>
+                  <div class="call-text">Or just give us a call on <span>080 6791 5500</span></div>
+                </div>
+              </div>
+              <div class="list-scenario1" data-ng-if="submitSuccess">
+                <div class="list-feed-inner">
+                  <div class="list-feed-head">Thank you,</div>
+                  <p>You will receive a call on your mobile number +91 <span id="callMobile" data-ng-bind="::mobile"></span> in next 24 hours</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

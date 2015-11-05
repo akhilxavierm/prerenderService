@@ -1,0 +1,150 @@
+[{
+  "id": "1444052246671197",
+  "details": {
+    "site": "Grabhouse",
+    "title": "Individual PG for Ladies",
+    "rent": 5000,
+    "deposit": 10000,
+    "category": "PG",
+    "flatType": null,
+    "furnishType": null,
+    "familyType": [
+      "Individual"
+    ],
+    "roomType": null,
+    "pgType": "Individual",
+    "workType": [
+      "Student",
+      "Working"
+    ],
+    "gender": [
+      "Female"
+    ],
+    "location": {
+      "name": "Koramangala 5th Block, Koramangala, Bengaluru, Karnataka, India",
+      "geocode": {
+        "lat": 12.9352156,
+        "lon": 77.6199608
+      }
+    },
+    "landmark": "sukh sagar",
+    "availableFrom": "2015-10-07",
+    "postedOn": "2015-10-06 13:19:47",
+    "hasImage": true,
+    "isExclusive": true,
+    "isPaid": false,
+    "city": "Bangalore",
+    "url": "non-sharing-pg-for-female-in-koramangala-bengaluru-without-broker-6C4vdmkmK",
+    "shortUrl": "",
+    "amenities": {
+      "building": [
+        "Clubhouse",
+        "Gym",
+        "Parking",
+        "Security",
+        "Elevator",
+        "House Keeping",
+        "24 Hours Water Supply",
+        "CCTV"
+      ],
+      "property": [
+        "Utensils",
+        "Shoerack",
+        "WIFI",
+        "Fridge",
+        "Microwave",
+        "Washing Machine",
+        "Television",
+        "Geyser",
+        "Sofa",
+        "AC",
+        "Bed",
+        "Cupboard",
+        "Fan",
+        "internet",
+        "Water Purifier",
+        "Girls Entry",
+        "Cooking Allowed",
+        "Table",
+        "Chair",
+        "Dining Table",
+        "Western Toilet",
+        "Attached Toilet"
+      ]
+    },
+    "owner": {
+      "name": "Test User",
+      "userName": "1442903373106945",
+      "gender": "Male",
+      "profileImage": null
+    },
+    "pgInfo": {
+      "rules": [
+        "Entry Time 10:00 PM",
+        "Smoking",
+        "Document proof",
+        "Guardian allowed",
+        "Drinking allowed",
+        "Boys allowed"
+      ],
+      "service": {
+        "food": [
+          "Breakfast",
+          "Lunch",
+          "Dinner"
+        ]
+      }
+    }
+  },
+  "photos": [{
+    "title": "Room 2",
+    "url": {
+      "small": "https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1445336857/web/listing/6C3lFRHQh/8290f64a594d7cbc.jpg",
+      "medium": "https://res.cloudinary.com/grabhouse/image/private/t_fill_200_150/v1445336857/web/listing/6C3lFRHQh/8290f64a594d7cbc.jpg",
+      "large": "https://res.cloudinary.com/grabhouse/image/private/t_fit_640_480/v1445336857/web/listing/6C3lFRHQh/8290f64a594d7cbc.jpg"
+    }
+  }, {
+    "title": "Room 1",
+    "url": {
+      "small": "https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1444055038/web/listing/6C3lFRHQh/1538e1911eed066c.jpg",
+      "medium": "https://res.cloudinary.com/grabhouse/image/private/t_fill_200_150/v1444055038/web/listing/6C3lFRHQh/1538e1911eed066c.jpg",
+      "large": "https://res.cloudinary.com/grabhouse/image/private/t_fit_640_480/v1444055038/web/listing/6C3lFRHQh/1538e1911eed066c.jpg"
+    }
+  }, {
+    "title": "Room 3",
+    "url": {
+      "small": "https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1445336852/web/listing/6C3lFRHQh/0ff7fb03642d550c.jpg",
+      "medium": "https://res.cloudinary.com/grabhouse/image/private/t_fill_200_150/v1445336852/web/listing/6C3lFRHQh/0ff7fb03642d550c.jpg",
+      "large": "https://res.cloudinary.com/grabhouse/image/private/t_fit_640_480/v1445336852/web/listing/6C3lFRHQh/0ff7fb03642d550c.jpg"
+    }
+  }, {
+    "title": "Room 4",
+    "url": {
+      "small": "https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1445336846/web/listing/6C3lFRHQh/1bdc18f8d60d891c.jpg",
+      "medium": "https://res.cloudinary.com/grabhouse/image/private/t_fill_200_150/v1445336846/web/listing/6C3lFRHQh/1bdc18f8d60d891c.jpg",
+      "large": "https://res.cloudinary.com/grabhouse/image/private/t_fit_640_480/v1445336846/web/listing/6C3lFRHQh/1bdc18f8d60d891c.jpg"
+    }
+  }, {
+    "title": "Room 6",
+    "url": {
+      "small": "https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1445337553/web/listing/6C3lFRHQh/0113026aaccdda7c.jpg",
+      "medium": "https://res.cloudinary.com/grabhouse/image/private/t_fill_200_150/v1445337553/web/listing/6C3lFRHQh/0113026aaccdda7c.jpg",
+      "large": "https://res.cloudinary.com/grabhouse/image/private/t_fit_640_480/v1445337553/web/listing/6C3lFRHQh/0113026aaccdda7c.jpg"
+    }
+  }, {
+    "title": "Room 5",
+    "url": {
+      "small": "https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1445336944/web/listing/6C3lFRHQh/96bb15b1eb6da0ac.jpg",
+      "medium": "https://res.cloudinary.com/grabhouse/image/private/t_fill_200_150/v1445336944/web/listing/6C3lFRHQh/96bb15b1eb6da0ac.jpg",
+      "large": "https://res.cloudinary.com/grabhouse/image/private/t_fit_640_480/v1445336944/web/listing/6C3lFRHQh/96bb15b1eb6da0ac.jpg"
+    }
+  }, {
+    "title": "Room 7",
+    "url": {
+      "small": "https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1445337651/web/listing/6C3lFRHQh/8c740f2391adf3cc.jpg",
+      "medium": "https://res.cloudinary.com/grabhouse/image/private/t_fill_200_150/v1445337651/web/listing/6C3lFRHQh/8c740f2391adf3cc.jpg",
+      "large": "https://res.cloudinary.com/grabhouse/image/private/t_fit_640_480/v1445337651/web/listing/6C3lFRHQh/8c740f2391adf3cc.jpg"
+    }
+  }],
+  "seen": true
+}]

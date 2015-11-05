@@ -1,0 +1,124 @@
+<div class="list-slider active" style="height: 1600px;">
+  <div ng-repeat="listingInfo in ::listingInfos track by $index">
+    <div class="slider-top">
+      <h3 class="open-more-info" data-ng-class="::{'text-elip' : listingInfo.details.title.length > 32}" data-ng-bind="::listingInfo.details.title"></h3>
+      <a href="../moreinfo" target="_blank" class="slider-moreinfo">
+        <i class="fa fa-external-link"></i>
+      </a>
+      <div class="slider-close" data-ng-click="openCloseDetails()">×</div>
+      <div class="slider-action-bar clearfix">
+        <gh-contact-owner-btn></gh-contact-owner-btn>
+        <gh-short-list-icon></gh-short-list-icon>
+        <gh-report-listing></gh-report-listing>
+      </div>
+    </div>
+    <div class="slider-scroll ps-container ps-active-y" data-ng-class="::{'handpicked' : listingInfo.details.isExclusive &amp;&amp; listingInfo.details.category=='PG'}" style="height: 700px;" class="scrollme" ng-scrollbar rebuild-on="rebuild:me">
+      <div class="basic-details clearfix">
+        <div class="details-content">
+          <!-- ngIf: listingInfo.details.title.length>32 -->
+          <div class="house-rent"><span>Rs. </span><span data-ng-bind="::listingInfo.details.rent"></span> per month&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="house-for"><span>Available for </span> <span data-ng-bind="::listingInfo.details.familyType[0]"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-details">
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="info-option-head">Security Deposit</div>
+            <div class="info-option-value"><span>Rs. </span><span data-ng-bind="::listingInfo.details.deposit"></span>
+            </div>
+          </div>
+          <!-- ngIf: !check.PG -->
+          <div class="col-xs-4" data-ng-if="::(!check.PG)">
+            <div class="info-option-head">Available from</div>
+            <div class="info-option-value" data-ng-bind="::(listingInfo.details.availableFrom | ghdateformat)"></div>
+          </div>
+          <!-- end ngIf: !check.PG -->
+          <!-- ngIf: check.PG -->
+          <!-- ngIf: !check.PG -->
+          <div class="col-xs-4" data-ng-if="::(!check.PG)">
+            <div class="pull-right">
+              <div class="info-option-head">Furnishing status</div>
+              <div class="info-option-value" data-ng-bind="::listingInfo.details.furnishType"></div>
+            </div>
+          </div>
+          <!-- end ngIf: !check.PG -->
+        </div>
+        <div class="slider-address">
+          <div class="info-option-head">Address</div>
+          <div class="info-option-value" data-ng-bind="::listingInfo.details.location.name"></div>
+        </div>
+      </div>
+      <div class="slider-line">
+        <span class="handpicked__text">HANDPICKED</span>
+        <span class="handpicked__img"></span>
+      </div>
+      <div class="photos-block">
+        <h4 class="slider-head">Photos</h4>
+        <uib-carousel interval="3000">
+          <uib-slide ng-repeat="slide in ::listingInfo.photos track by $index" active="slide.active">
+            <img ng-src="{{::slide.url.medium}}" style="margin: auto;">
+            <h1>SLIDE {{::$index+1}} </h1>
+          </uib-slide>
+        </uib-carousel>
+      </div>
+      <div class="slider-line"></div>
+      <div class="amenities-block">
+        <h4 class="slider-head">Amenities</h4>
+        <gh-amenities showAll="false"></gh-amenities>
+      </div>
+      <div class="slider-line"></div>
+      <div class="commute-block" ng-click="commutenav(listingInfo,$event)">
+        <h4 class="slider-head">Commute</h4>
+        <!-- start:dsMap HTML -->
+        <ds-map ds-map-settings="mapObject">
+          <ds-map-places>
+            <uib-accordion close-others="oneAtATime">
+              <uib-accordion-group heading="Transportation">
+                <ds-places-type types="{'bus_station':1,'airport':2,'train_station':2}"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Restaurants and Bars">
+                <ds-places-type types="['restaurant']"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Schools/Colleges">
+                <ds-places-type types="{'university':3,'school':2}"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Hospitals">
+                <ds-places-type types="['hospital']"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Pharmacies">
+                <ds-places-type types="['pharmacy']"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Shopping Malls">
+                <ds-places-type types="{'shopping_mall':2,'grocery_or_supermarket':2,'department_store':1}"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Gardens and Recreation">
+                <ds-places-type types="{'amusement_park':2,'art_gallery':1,'zoo':1,'museum':1}"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Movie Halls">
+                <ds-places-type types="['movies']" sort-option="radius" radius="5000"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="ATMs">
+                <ds-places-type types="['atm']"></ds-places-type>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Gas Stations">
+                <ds-places-type types="['gas_station']"></ds-places-type>
+              </uib-accordion-group>
+            </uib-accordion>
+          </ds-map-places>
+        </ds-map>
+        <!-- end:dsMap HTML -->
+        <!-- start:Places Service Template -->
+        <script type="text/ng-template" id="dsMapPlaces.html">
+          <div>
+            <div ng-repeat="place in Places | limitTo:5" ng-mouseover="showDirection()" ds-within-bounds>
+              <div ng-bind="place.name"></div>
+            </div>
+          </div>
+        </script>
+        <!-- end:Places Service Template -->
+      </div>
+    </div>
+  </div>
+</div>

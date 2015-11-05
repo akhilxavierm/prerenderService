@@ -1,0 +1,19 @@
+{
+  "name": "Cycle",
+  "version": "0.0.1",
+  "homepage": "https://github.com/JesselJohn/JSON-js",
+  "authors": [
+    "Douglas Crockford"
+  ],
+  "description": "Encode cyclical structures and dags in JSON, and to then recover them",
+  "main": "cycle.js",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "06da8d1bf04432b4068a07cbdcf9da4aec340af8"
+  },
+  "_source": "git://github.com/JesselJohn/JSON-js.git",
+  "_target": "^0.0.1",
+  "_originalSource": "cycle-js"
+}

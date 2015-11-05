@@ -1,0 +1,8 @@
+<div class='house-block right-block' data-ng-repeat="block in ::amenities.blocks track by $index" data-ng-if="::block.show">
+  <div class="head" data-ng-bind="::block.head"></div>
+  <div class="amen-list clearfix">
+    <div data-ng-repeat="amen in ::amenities[block.arr]  track by $index" class="a-item" data-ng-class="::{active:amen.avail==true}" data-ng-if="::(amen.avail ? amen.show : showAll)">
+      <span>{{::amen.name}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="footer-middle">
+  <div id="tabContainer">
+    <uib-tabset justified="false" type="null" id="tabs">
+      <uib-tab heading="Flat">
+        <div class="tabpage clearfix">
+          <div class='flinks clearfix' ng-repeat="city in ::staticData.data.footerContent.flat track by $index">
+            <div class='flinks-inner'><a href='/{{::city.url}}' target='_blank' class='listlink'>House on rent in {{::city.name}}</a>
+              <ul>
+                <li ng-repeat="loc in city.locations track by $index"><a href='/{{::loc.url}}'>House for rent in {{::loc.name}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </uib-tab>
+      <uib-tab heading="Room">
+        <div class="tabpage clearfix">
+          <div class='flinks clearfix' ng-repeat="city in ::staticData.data.footerContent.room track by $index">
+            <div class='flinks-inner'><a href='/{{::city.url}}' target='_blank' class='listlink'>Room for rent in {{::city.name}}</a>
+              <ul>
+                <li ng-repeat="loc in ::city.locations track by $index"><a href='/{{::loc.url}}'>Rooms for rent in {{::loc.name}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </uib-tab>
+      <uib-tab heading="PG">
+        <div class="tabpage clearfix">
+          <div class='flinks clearfix' ng-repeat="city in ::staticData.data.footerContent.PG track by $index">
+            <div class='flinks-inner'><a href='/{{::city.url}}' target='_blank' class='listlink'>PG in {{::city.name}}</a>
+              <ul>
+                <li ng-repeat="loc in ::city.locations track by $index"><a href='/{{::loc.url}}'>PG in {{::loc.name}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </uib-tab>
+      <uib-tab heading="Read More">
+        <div class="tabpage ng-show">
+          <any ng-repeat="item in ::staticData.data.footerContent.read_more track by $index">
+            <div class="footer-text">
+              <h5>{{::item.question}}</h5>
+              <p>{{::item.answer}}</p>
+            </div>
+          </any>
+        </div>
+      </uib-tab>
+    </uib-tabset>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div>
+  <input type="text" placeholder="Enter Location eg. Koramangala" class="form-control" id="location_searchbar" name="location" ng-model="mapSearch" ng-autocomplete="results" details="details" options="options" autocomplete="off" required/>
+  <i class="fa fa-search search-icon"></i>
+  <div class="location-error" data-ng-if="showError===undefined?searchError:showError" data-ng-if="postReqError===undefined || postReqError.location===null">
+    <i class="fa fa-warning"></i>
+    <div id="location-error hidden">{{::gberror}}</div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+  <gh-overlay></gh-overlay>
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/"><img src="/images/logo-new.png" /></a>
+  </div>
+  <div class="clearfix">
+    <gh-menu></gh-menu>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="/listing/property">List your property</a>
+      </li>
+      <li>
+        <a href="/user/signin">Post your requirement</a>
+      </li>
+      <li>
+        <gh-notifications></gh-notifications>
+      </li>
+      <li class="sign-in-header">
+        <a href="/user/signin" data-ng-if="userData.isGuest"><span class="login-trigger">Sign in</span></a>
+      </li>
+    </ul>
+  </div>
+  <gh-auth></gh-auth>
+  <gh-forgot-password></gh-forgot-password>
+  <gh-profile></gh-profile>
+  <gh-cash-counter></gh-cash-counter>
+</nav>

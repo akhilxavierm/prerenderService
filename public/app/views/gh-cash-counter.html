@@ -1,0 +1,89 @@
+<div class="modal-window modal-show" data-ng-if="cashcounterActive">
+  <div class="post-requirement-modal" data-ng-if="!postSuccess">
+    <div class="modal-wrap">
+      <div class="modal-close post-requirement-close" data-ng-click="closeCashCounterModal()">×</div>
+      <div class="post-requirement-wrap">
+        <div class="requirement-wrap">
+          <div class="container">
+            <div class="slides-container top">
+              <div class="graphics-wrap owner-details">
+                <div class="offer-wrap">
+                  <div class="offer-inner">
+                    <p class="offer-title">Rs.50/- FREE</p>
+                    <p class="offer-details">Share your previous owner details and get Rs.50/- Mobile Recharge.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container selection-wrap">
+          <div class="slides-container bottom">
+            <div class="options-wrap owner-details-wrap">
+              <form name="oDForm" novalidate>
+                <div class="owner-details-options">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Owner Full name" name="fullName" id="ownerName" ng-model="owner.fullName" ng-pattern="/[a-zA-Z]$/" required maxlength="15" />
+                    <span data-ng-if="oDForm.$submitted || oDForm.fullName.$touched">
+                      <span class="help-block recharge" data-ng-if="oDForm.fullName.$error.required">Name cannot be blank</span>
+                    <span class="help-block recharge" data-ng-if="oDForm.fullName.$error.pattern">Name cannot have special charater</span>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="mobile" class="form-control  owner-details-mobile" placeholder="Owner Mobile Number" id="ownerMobile" ng-model="owner.mobile" required minlength="10" maxlength="10" ng-pattern="/^[7|8|9][0-9]{9}$/" />
+                    <span data-ng-if="oDForm.$submitted || oDForm.mobile.$touched">
+                      <span class="help-block recharge" data-ng-if="oDForm.mobile.$error.required">Please enter owner's mobile number</span>
+                    <span class="help-block recharge" data-ng-if="oDForm.mobile.$error.minlength || oDForm.mobile.$error.pattern
+                                 || oDForm.mobile.$error.maxlength">Please enter valid mobile number</span>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <div class="location-dropdown">
+                      <gh-autocomplete></gh-autocomplete>
+                      <span data-ng-if="oDForm.$submitted || oDForm.location.$touched">
+                      	<span class="help-block recharge" data-ng-if="oDForm.location.$error.required">Please enter atleast one location</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group owner-accomodation-type">
+                    <div class="full-flat-wrap">
+                      <input type="radio" name="accommodationType" ng-model="owner.accomodationType" ng-required="!owner.accomodationType" value="2" id="fullFlat" checked class="hidden">
+                      <label for="fullFlat" class="occType">
+                        <span class="sprite full-flat"></span>
+                        <span>Full Flat</span>
+                      </label>
+                    </div>
+                    <div class="roommates-wrap">
+                      <input type="radio" name="accommodationType" ng-model="owner.accomodationType" ng-required="!owner.accomodationType" id="roommates" value="1" class="hidden">
+                      <label for="roommates" class="occType">
+                        <span class="sprite roommates"></span>
+                        <span>Roommates</span>
+                      </label>
+                    </div>
+                    <div class="pg-wrap">
+                      <input type="radio" name="accommodationType" ng-model="owner.accomodationType" ng-required="!owner.accomodationType" id="paidGuest" value="3" class="hidden">
+                      <label for="paidGuest" class="occType">
+                        <span class="sprite paid-guest"></span>
+                        <span>PG</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input id="postRequirement" type="submit" class="btn btn-primary" value="Finish" ng-click="updateODetails(oDForm.$valid)" />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="owner-feedback-modal" data-ng-if="postSuccess">
+    <div class="modal-wrap">
+      <div class="modal-close owner-feedback-close" data-ng-click="closeCashCounterModal()">×</div>
+      <div class="modal-head">Thank you!</div>
+      <div class="modal-para">We have received the details and the recharge will be made soon after the verification.</div>
+    </div>
+  </div>
+</div>

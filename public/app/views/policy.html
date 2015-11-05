@@ -1,0 +1,27 @@
+<section class="privacy-terms">
+    <div class="privacy-cont">
+        <ul class="nav nav-tabs">
+            <li data-ng-class="{'active' : selected}" data-ng-click="toggle()">
+                <a href="/termsandconditions">Terms and Conditions</a>
+            </li>
+            <li data-ng-class="{'active' : !selected}" data-ng-click="toggle()">
+                <a href="/privacy">Privacy Policy</a>
+            </li>
+        </ul>
+        <div class="content-wrap">
+            <gh-privacy data-ng-if="!selected"></gh-privacy>
+            <gh-terms-and-conditions data-ng-if="selected"></gh-terms-and-conditions>
+            <div class="container-fluid contact-elements">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label class="label-lg">Contacting Us</label>
+                        <p>If you have any questions about this Privacy policy, the practices of this site, or your dealings with this site, please </p>
+                    </div>
+                    <div class="col-xs-4"><a href="/" class="website">www.grabhouse.com</a></div>
+                    <div class="col-xs-4"><a href="tel:+919920119482">080 6791 5500</a></div>
+                    <div class="col-xs-4"><a href="mailto:inquiry@grabhouse.com">care@grabhouse.com</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

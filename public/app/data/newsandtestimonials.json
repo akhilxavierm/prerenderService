@@ -1,0 +1,829 @@
+{
+  "news" : [
+    { 
+      "name" : "live mint",
+      "url" : "http://www.livemint.com/Companies/rEy135yoa9K22ML0cl4IzO/Grabhouse-raises-25-million-from-Kalaari-Sequoia-Capital.html",
+      "identifier" : "live-mint"
+    },
+    {
+      "name" : "dna",
+      "url" : "http://dnasyndication.com/dna/Mumbai/dna_english_news_and_features/Leverage-your-online-connect/DNMUM320633",
+      "identifier" : "dna"
+    },
+    {
+      "name" : "next big what",
+      "url" : "http://www.nextbigwhat.com/flat-finding-website-grabhouse-secures-series-funding-297/",
+      "identifier" : "next-big"
+    },
+    {
+      "name" : "mid day",
+      "url" : "http://www.mid-day.com/articles/house-hunting-forget-the-broker/15787197",
+      "identifier" : "mid-day"
+
+    },
+    {
+      "name" : "techcircle",
+      "url" : "http://techcircle.vccircle.com/2015/01/28/accommodation-listing-site-grabhouse-com-raises-2-5m-in-series-a-funding-from-kalaari-sequoia/",
+      "identifier" : "tech-circle"
+
+    },
+    {
+      "name" : "BusinessLine",
+      "url" : "http://www.thehindubusinessline.com/features/investment-world/your-money/on-a-house-hunt-keep-the-broker-out/article6410075.ece",
+      "identifier" : "business-line"
+
+    },
+    {
+      "name" : "The Economic Times",
+      "url" : "http://economictimes.indiatimes.com/news/emerging-businesses/entrepreneurship/women-entrepreneurs-show-the-way-for-workplace-gender-parity/articleshow/46571466.cms",
+      "identifier" : "economic-times"
+
+    },
+    {
+      "name" : "Bangalore Mirror",
+      "url" : "http://www.bangaloremirror.com/columns/work/One-Question-Two-CEOs-One-thing-you-do-on-waking-up-and-before-going-to-bed/articleshow/46135178.cms",
+      "identifier" : "bangalore-mirror"
+
+    }
+  ],
+
+  "testimonials" : [
+    {
+      "avatarUrl": "images/anurag_murty.jpg",
+      "fullName": "Anurag Murty",
+      "text": "I saved a fortune on paying a broker and was able to precisely specify my needs to the relationship manager. Searching for a house ended up being a much easier task than I expected."
+    },
+    {
+      "avatarUrl": "images/akanksha_shukla.jpg",
+      "fullName": "Akanksha Shukla",
+      "text": "Found a place just in time. It was a PGs that Grabhouse suggested to me. I got a single room to my liking with everything that I wanted. The landlady is also cooperative. I must thank the team for all their help and cooperation."
+    },
+    {
+      "avatarUrl": "images/tushar_khandelwal.jpg",
+      "fullName": "Tushar Khandelwal",
+      "text": "The service is fantastic. I liked the flat I got in Thane. It’s perfect for 2-3 working guys and has decent facilities around. My friends are still shocked that we found a home without a broker. Thanks a lot, Grabhouse team!"
+    },
+    {
+      "avatarUrl": "images/saurav.jpg",
+      "fullName": "Saurav",
+      "text": "The most amazing thing is that Grabhouse promised me that they will get me a place on the same day and they did. I was so happy they managed to keep their word. I have already recommended Grabhouse to all my office colleagues."
+    }
+  ],
+
+  "sliderConfig" : {
+    "interval" : "5000"
+  },
+
+  "footerContent" : {
+    "flat" : [
+      {
+        "name" : "Bangalore",
+        "locations" : [
+          {
+            "name" : "HSR Layout", 
+            "url" : "flat-house-for-rent-in-hsr-layout-bangalore-7ec598ac43"
+          },
+          {
+            "name" : "Koramangala", 
+            "url" : "flat-house-for-rent-in-koramangala-bangalore-70f5176384"
+          },
+          {
+            "name" : "Malleswaram", 
+            "url" : "flat-house-for-rent-in-malleswaram-bangalore-1a99c71062"
+          },
+          {
+            "name" : "Marathahalli", 
+            "url" : "flat-house-for-rent-in-marathahalli-bangalore-60456ebd04"
+          }
+        ],
+        "url" : "flat-house-for-rent-in-bangalore-e46d182ead"
+      },
+      {
+        "name" : "Mumbai",
+        "locations" : [
+          {
+            "name" : "Airoli",
+            "url" : "flat-house-for-rent-in-airoli-mumbai-2b99bad079"
+          },
+          {
+            "name" : "Andheri East",
+            "url" : "flat-house-for-rent-in-andheri-east-mumbai-5f8797d13d"
+          },
+          {
+            "name" : "Kharghar",
+            "url" : "flat-house-for-rent-in-kharghar-mumbai-0fd9c4a41e"
+          },
+          {
+            "name" : "Vashi",
+            "url" : "flat-house-for-rent-in-vashi-mumbai-669a85763a"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-mumbai-c50499accf"
+      },
+      {
+        "name" : "Hyderabad",
+        "locations" : [
+          {
+            "name" : "Kukatpally",
+            "url" : "flat-house-for-rent-in-kukatpally-hyderabad-2732c08032"
+          },
+          {
+            "name" : "Manikonda",
+            "url" : "flat-house-for-rent-in-manikonda-hyderabad-aa64ded3d8"
+          },
+          {
+            "name" : "Miyapur",
+            "url" : "flat-house-for-rent-in-miyapur-hyderabad-017d7755f5"
+          },
+          {
+            "name" : "Toli Chowki",
+            "url" : "flat-house-for-rent-in-toli-chowki-hyderabad-d44294a6b1"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-hyderabad-1f6aea1ea4"
+      },
+      {
+        "name" : "Pune",
+        "locations" : [
+          {
+            "name" : "Chinchwad",
+            "url" : "flat-house-for-rent-in-chinchwad-pune-129f97f11d"
+          },
+          {
+            "name" : "Hadapsar",
+            "url" : "flat-house-for-rent-in-hadapsar-pune-2f0d48be46"
+          },
+          {
+            "name" : "Kondhwa",
+            "url" : "flat-house-for-rent-in-kondhwa-pune-cd407ca3ee"
+          },
+          {
+            "name" : "Kothrud",
+            "url" : "flat-house-for-rent-in-kothrud-pune-df3b74bed4"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-pune-54b5e56da4"
+      },
+      {
+        "name" : "Delhi",
+        "locations" : [
+          {
+            "name" : "Dwarka",
+            "url" : "flat-house-for-rent-in-dwarka-delhi-70944acc8f"
+          },
+          {
+            "name" : "Rohini",
+            "url" : "flat-house-for-rent-in-rohini-delhi-002b728930"
+          },
+          {
+            "name" : "Uttam Nagar",
+            "url" : "flat-house-for-rent-in-uttam-nagar-delhi-582e287506"
+          },
+          {
+            "name" : "Vasant Kunj",
+            "url" : "flat-house-for-rent-in-vasant-kunj-delhi-f00aee6d98"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-delhi-f2f181280e"
+      },
+      {
+        "name" : "Noida",
+        "locations" : [
+          {
+            "name" : "Sector 137",
+            "url" : "flat-house-for-rent-in-sector-137-noida-f3d0cfc3cb"
+          },
+          {
+            "name" : "Sector 49",
+            "url" : "flat-house-for-rent-in-sector-49-noida-5f8b502e9d"
+          },
+          {
+            "name" : "Sector 50",
+            "url" : "flat-house-for-rent-in-sector-50-noida-fb4688e55c"
+          },
+          {
+            "name" : "Sector 76",
+            "url" : "flat-house-for-rent-in-sector-76-noida-f15985ed13"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-noida-0a75703307"
+
+      },
+      {
+        "name" : "Ghaziabad",
+        "locations" : [
+          {
+            "name" : "Indirapuram",
+            "url" : "flat-house-for-rent-in-indirapuram-ghaziabad-4046cda6da"
+          },
+          {
+            "name" : "Raj Nagar Extension",
+            "url" : "flat-house-for-rent-in-raj-nagar-extension-ghaziabad-a8065224d0"
+          },
+          {
+            "name" : "Vaishali",
+            "url" : "flat-house-for-rent-in-vaishali-ghaziabad-7d5488425c"
+          },
+          {
+            "name" : "Vasundhara",
+            "url" : "flat-house-for-rent-in-vasundhara-ghaziabad-5d455420f1"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-ghaziabad-cb589f5082"
+      },
+      {
+        "name" : "Faridabad",
+        "locations" : [
+          {
+            "name" : "Sector 28",
+            "url" : "flat-house-for-rent-in-sector-28-faridabad-19c850b919"
+          },
+          {
+            "name" : "Sector 42",
+            "url" : "flat-house-for-rent-in-sector-42-faridabad-d9b61ebdbc"
+          },
+          {
+            "name" : "Sector 49",
+            "url" : "flat-house-for-rent-in-sector-49-faridabad-23ff62bdc1"
+          },
+          {
+            "name" : "Sector 88",
+            "url" : "flat-house-for-rent-in-sector-88-faridabad-2baed571d9"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-faridabad-401946debe"
+      },
+      {
+        "name" : "Gurgaon",
+        "locations" : [
+          {
+            "name" : "Sector 24",
+            "url" : "flat-house-for-rent-in-sector-24-gurgaon-d1dc0307ba"
+          },
+          {
+            "name" : "Sector 56",
+            "url" : "flat-house-for-rent-in-sector-56-gurgaon-bab4b1c0b7"
+          },
+          {
+            "name" : "Sector 9",
+            "url" : "flat-house-for-rent-in-sector-9-gurgaon-742f423988"
+          },
+          {
+            "name" : "Sushant Lok",
+            "url" : "flat-house-for-rent-in-sushant-lok-gurgaon-336ee42435"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-gurgaon-bfdd5f9fc4"
+      },
+      {
+        "name" : "Chennai",
+        "locations" : [
+          {
+            "name" : "Chromepet",
+            "url" : "flat-house-for-rent-in-chromepet-chennai-8c7424e38e"
+          },
+          {
+            "name" : "Madipakkam",
+            "url" : "flat-house-for-rent-in-madipakkam-chennai-df17678b4d"
+          },
+          {
+            "name" : "Porur",
+            "url" : "flat-house-for-rent-in-porur-chennai-10d1adbedd"
+          },
+          {
+            "name" : "Velachery",
+            "url" : "flat-house-for-rent-in-velachery-chennai-8721e92849"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-chennai-2f8f67601d"
+      },
+      {
+        "name" : "Kolkata",
+        "locations" : [
+          {
+            "name" : "Dum Dum",
+            "url" : "flat-house-for-rent-in-dum-dum-kolkata-ad69bd20fc"
+          },
+          {
+            "name" : "Garia",
+            "url" : "flat-house-for-rent-in-garia-kolkata-033a8f112a"
+          },
+          {
+            "name" : "Kasba",
+            "url" : "flat-house-for-rent-in-kasba-kolkata-c78db2017d"
+          },
+          {
+            "name" : "Newtown",
+            "url" : "flat-house-for-rent-in-newtown-kolkata-4825f57f52"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-kolkata-c7b1958f2c"
+      }
+    ],
+
+    "room" : [
+      {
+        "name" : "Bangalore",
+        "locations" : [
+          {
+            "name" : "BTM Layout",
+            "url" : "Roommate-room-for-rent-in-btm-layout-bangalore-4e5bb56238"
+          },
+          {
+            "name" : "Koramangala",
+            "url" : "Roommate-room-for-rent-in-koramangala-bangalore-58af058f87"
+          },
+          {
+            "name" : "Marathahalli",
+            "url" : "Roommate-room-for-rent-in-marathahalli-bangalore-ee5be8885a"
+          },
+          {
+            "name" : "Mathikere",
+            "url" : "Roommate-room-for-rent-in-mathikere-bangalore-a3d6d75ad2"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-bangalore-54c53f6b99"
+      },
+      {
+        "name" : "Mumbai",
+        "locations" : [
+          {
+            "name" : "Airoli",
+            "url" : "Roommate-room-for-rent-in-airoli-mumbai-9e0a708447"
+          },
+          {
+            "name" : "Kharghar",
+            "url" : "Roommate-room-for-rent-in-kharghar-mumbai-2cd200e369"
+          },
+          {
+            "name" : "Thane West",
+            "url" : "Roommate-room-for-rent-in-thane-west-mumbai-0a3ee0ba28"
+          },
+          {
+            "name" : "Vashi",
+            "url" : "Roommate-room-for-rent-in-vashi-mumbai-3ce565e811"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-mumbai-c50499accf"
+      },
+      {
+        "name" : "Hyderabad",
+        "locations" : [
+          {
+            "name" : "Ameerpet",
+            "url" : "Roommate-room-for-rent-in-ameerpet-hyderabad-c3dccb639c"
+          },
+          {
+            "name" : "Begumpet",
+            "url" : "Roommate-room-for-rent-in-begumpet-hyderabad-31276580df"
+          },
+          {
+            "name" : "Kothaguda",
+            "url" : "Roommate-room-for-rent-in-kothaguda-hyderabad-d9f13d02f7"
+          },
+          {
+            "name" : "Punjagutta",
+            "url" : "Roommate-room-for-rent-in-punjagutta-hyderabad-8c8c86819a"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-hyderabad-1f6aea1ea4"
+      },
+      {
+        "name" : "Pune",
+        "locations" : [
+          {
+            "name" : "Hinjewadi",
+            "url" : "Roommate-room-for-rent-in-hinjewadi-pune-57f003c44a"
+          },
+          {
+            "name" : "Kalyani Nagar",
+            "url" : "Roommate-room-for-rent-in-kalyani-nagar-pune-d3f2cb6a25"
+          },
+          {
+            "name" : "Karvenagar",
+            "url" : "Roommate-room-for-rent-in-karvenagar-pune-63154999bf"
+          },
+          {
+            "name" : "Shivajinagar",
+            "url" : "Roommate-room-for-rent-in-shivajinagar-pune-e9e37aa0df"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-pune-54b5e56da4"
+      },
+      {
+        "name" : "Delhi",
+        "locations" : [
+          {
+            "name" : "Dwarka",
+            "url" : "Roommate-room-for-rent-in-dwarka-delhi-1fb34d9bd9"
+          },
+          {
+            "name" : "Laxmi Nagar",
+            "url" : "Roommate-room-for-rent-in-laxmi-nagar-delhi-cb97dade2a"
+          },
+          {
+            "name" : "Malviya Nagar",
+            "url" : "Roommate-room-for-rent-in-malviya-nagar-delhi-990fd9ec7b"
+          },
+          {
+            "name" : "Patel Nagar",
+            "url" : "Roommate-room-for-rent-in-patel-nagar-delhi-7cb2a7c36c"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-delhi-f2f181280e"
+      },
+      {
+        "name" : "Noida",
+        "locations" : [
+          {
+            "name" : "Sector 19",
+            "url" : "Roommate-room-for-rent-in-sector-19-noida-2144ceef0b"
+          },
+          {
+            "name" : "Sector 36",
+            "url" : "Roommate-room-for-rent-in-sector-36-noida-e59f45c888"
+          },
+          {
+            "name" : "Sector 39",
+            "url" : "Roommate-room-for-rent-in-sector-39-noida-bfee56c13c"
+          },
+          {
+            "name" : "Sector 39",
+            "url" : "Roommate-room-for-rent-in-sector-39-noida-14b9e595a8"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-noida-0a75703307"
+      },
+      {
+        "name" : "Ghaziabad",
+        "locations" : [
+          {
+            "name" : "Indirapuram",
+            "url" : "Roommate-room-for-rent-in-indirapuram-ghaziabad-8938a3291f"
+          },
+          {
+            "name" : "Shastri Nagar",
+            "url" : "Roommate-room-for-rent-in-shastri-nagar-ghaziabad-8a16c03285"
+          },
+          {
+            "name" : "Vaishali",
+            "url" : "Roommate-room-for-rent-in-vaishali-ghaziabad-702f7a0311"
+          },
+          {
+            "name" : "Vasundhara",
+            "url" : "Roommate-room-for-rent-in-vasundhara-ghaziabad-eeb0691487"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-ghaziabad-cb589f5082"
+      },
+      {
+        "name" : "Faridabad",
+        "locations" : [
+          {
+            "name" : "Sector 11",
+            "url" : "Roommate-room-for-rent-in-sector-11-faridabad-690010ae5e"
+          },
+          {
+            "name" : "Sector 16",
+            "url" : "Roommate-room-for-rent-in-sector-16-faridabad-03161e6b33"
+          },
+          {
+            "name" : "Sector 37",
+            "url" : "Roommate-room-for-rent-in-sector-37-faridabad-acaad9e4f6"
+          },
+          {
+            "name" : "Sector 55",
+            "url" : "Roommate-room-for-rent-in-sector-55-faridabad-061a4840d7"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-faridabad-401946debe"
+      },
+      {
+        "name" : "Gurgaon",
+        "locations" : [
+          {
+            "name" : "Sector 23A",
+            "url" : "Roommate-room-for-rent-in-sector-23a-gurgaon-a5ad276146"
+          },
+          {
+            "name" : "Sector 53",
+            "url" : "Roommate-room-for-rent-in-sector-53-gurgaon-16be164d9f"
+          },
+          {
+            "name" : "Sector 56",
+            "url" : "Roommate-room-for-rent-in-sector-56-gurgaon-07172f7ed8"
+          },
+          {
+            "name" : "Sushant Lok",
+            "url" : "Roommate-room-for-rent-in-sushant-lok-gurgaon-103c33b399"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-gurgaon-bfdd5f9fc4"
+      },
+      {
+        "name" : "Chennai",
+        "locations" : [
+          {
+            "name" : "Mettukuppam",
+            "url" : "Roommate-room-for-rent-in-mettukuppam-chennai-3d79a49e72"
+          },
+          {
+            "name" : "Okkiyam Thuraipakkam",
+            "url" : "Roommate-room-for-rent-in-okkiyam-thuraipakkam-chennai-174e77d82f"
+          },
+          {
+            "name" : "Sholinganallur",
+            "url" : "Roommate-room-for-rent-in-sholinganallur-chennai-3631297d6f"
+          },
+          {
+            "name" : "Velachery",
+            "url" : "Roommate-room-for-rent-in-velachery-chennai-547657304c"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-chennai-2f8f67601d"
+      },
+      {
+        "name" : "Kolkata",
+        "locations" : [
+          {
+            "name" : "Ashok Nagar",
+            "url" : "Roommate-room-for-rent-in-ashok-nagar-kolkata-48c794138b"
+          },
+          {
+            "name" : "Kaikhali",
+            "url" : "Roommate-room-for-rent-in-kaikhali-kolkata-d40c14adaf"
+          },
+          {
+            "name" : "Newtown",
+            "url" : "Roommate-room-for-rent-in-newtown-kolkata-b2beb0db81"
+          },
+          {
+            "name" : "Tollygunge",
+            "url" : "Roommate-room-for-rent-in-tollygunge-kolkata-a9be6d9f3f"
+          }
+        ],
+        "url" : "Roommate-room-for-rent-in-kolkata-c7b1958f2c"
+      }
+    ],
+
+    "PG" : [
+      {
+        "name" : "Bangalore",
+        "locations" : [
+          {
+            "name" : "BTM Layout",
+            "url" : "PG-in-btm-layout-bangalore-e4bff4755e"
+          },
+          {
+            "name" : "HSR Layout",
+            "url" : "PG-in-hsr-layout-bangalore-822da90aa1"
+          },
+          {
+            "name" : "Koramangala",
+            "url" : "PG-in-koramangala-bangalore-4627816171"
+          },
+          {
+            "name" : "Marathahalli",
+            "url" : "PG-in-marathahalli-bangalore-d56a9a4d23"
+          }
+        ],
+        "url" : "PG-in-bangalore-bd57e436a4"
+      },
+      {
+        "name" : "Mumbai",
+        "locations" : [
+          {
+            "name" : "Bandra East",
+            "url" : "PG-in-bandra-east-mumbai-12b9e75510"
+          },
+          {
+            "name" : "Churchgate",
+            "url" : "PG-in-churchgate-mumbai-4d959782c1"
+          },
+          {
+            "name" : "Colaba",
+            "url" : "PG-in-colaba-mumbai-ea775cd09d"
+          },
+          {
+            "name" : "Lower Parel",
+            "url" : "PG-in-lower-parel-mumbai-2b06d3875d"
+          }
+        ],
+        "url" : "PG-in-mumbai-091f3d29d1"
+      },
+      {
+        "name" : "Hyderabad",
+        "locations" : [
+          {
+            "name" : "Begumpet",
+            "url" : "PG-in-begumpet-hyderabad-0f42d5acd3"
+          },
+          {
+            "name" : "Gachibowli",
+            "url" : "PG-in-gachibowli-hyderabad-f87630c39f"
+          },
+          {
+            "name" : "Hitech City",
+            "url" : "PG-in-hitech-city-hyderabad-23d2c95dd1"
+          },
+          {
+            "name" : "Madhapur",
+            "url" : "PG-in-madhapur-hyderabad-1a169c514d"
+          }
+        ],
+        "url" : "PG-in-hyderabad-1882bf5f6e"
+      },
+      {
+        "name" : "Pune",
+        "locations" : [
+          {
+            "name" : "Hadapsar",
+            "url" : "PG-in-hadapsar-pune-fe610c434a"
+          },
+          {
+            "name" : "Hinjewadi",
+            "url" : "PG-in-hinjewadi-pune-0ea1b5ff87"
+          },
+          {
+            "name" : "Karvenagar",
+            "url" : "PG-in-karvenagar-pune-061472a8a5"
+          },
+          {
+            "name" : "Vishrantwadi",
+            "url" : "PG-in-vishrantwadi-pune-1070f924fb"
+          }
+        ],
+        "url" : "PG-in-pune-7663e0c6d3"
+      },
+      {
+        "name" : "Delhi",
+        "locations" : [
+          {
+            "name" : "Kalkaji",
+            "url" : "PG-in-kalkaji-delhi-607743aa54"
+          },
+          {
+            "name" : "Lajpat Nagar",
+            "url" : "PG-in-lajpat-nagar-delhi-2e681b2773"
+          },
+          {
+            "name" : "Patel Nagar",
+            "url" : "PG-in-patel-nagar-delhi-6abfd495a2"
+          },
+          {
+            "name" : "Rohini",
+            "url" : "PG-in-rohini-delhi-0a9ec43b2a"
+          }
+        ],
+        "url" : "PG-in-delhi-16448e18e1"
+      },
+      {
+        "name" : "Noida",
+        "locations" : [
+          {
+            "name" : "Sector 27",
+            "url" : "PG-in-sector-27-noida-0b23d5da5c"
+          },
+          {
+            "name" : "Sector 41",
+            "url" : "PG-in-sector-41-noida-75c228cc6a"
+          },
+          {
+            "name" : "Sector 41",
+            "url" : "PG-in-sector-41-noida-2514dde0f4"
+          },
+          {
+            "name" : "Sector 55",
+            "url" : "PG-in-sector-55-noida-00be3cb203"
+          }
+        ],
+        "url" : "PG-in-noida-35fcf28d24"
+      },
+      {
+        "name" : "Ghaziabad",
+        "locations" : [
+          {
+            "name" : "Indirapuram",
+            "url" : "PG-in-indirapuram-ghaziabad-90831a2921"
+          },
+          {
+            "name" : "Shastri Nagar",
+            "url" : "PG-in-shastri-nagar-ghaziabad-f98d3019b9"
+          },
+          {
+            "name" : "Vaishali",
+            "url" : "PG-in-vaishali-ghaziabad-986736db45"
+          },
+          {
+            "name" : "Vasundhara",
+            "url" : "PG-in-vasundhara-ghaziabad-a53e63f3af"
+          }
+        ],
+        "url" : "PG-in-ghaziabad-77c48f5450"
+      },
+      {
+        "name" : "Faridabad",
+        "locations" : [
+          {
+            "name" : "New Industrial Township",
+            "url" : "PG-in-new-industrial-township-faridabad-b31fa14390"
+          },
+          {
+            "name" : "Sector 11",
+            "url" : "PG-in-sector-11-faridabad-d682815999"
+          },
+          {
+            "name" : "Sector 19",
+            "url" : "PG-in-sector-19-faridabad-5d1e62f94e"
+          },
+          {
+            "name" : "Sector 9",
+            "url" : "PG-in-sector-9-faridabad-4f4a62b890"
+          }
+        ],
+        "url" : "PG-in-faridabad-654513d026"
+      },
+      {
+        "name" : "Gurgaon",
+        "locations" : [
+          {
+            "name" : "Sector 21",
+            "url" : "PG-in-sector-21-gurgaon-3f551079c2"
+          },
+          {
+            "name" : "Sector 22",
+            "url" : "PG-in-sector-22-gurgaon-2d2910e5f4"
+          },
+          {
+            "name" : "Sector 23",
+            "url" : "PG-in-sector-23-gurgaon-f270f69e73"
+          },
+          {
+            "name" : "Sushant Lok",
+            "url" : "PG-in-sushant-lok-gurgaon-e59bcbc3e4"
+          }
+        ],
+        "url" : "PG-in-gurgaon-ab323601e0"
+      },
+      {
+        "name" : "Chennai",
+        "locations" : [
+          {
+            "name" : "Mettukuppam",
+            "url" : "PG-in-mettukuppam-chennai-2ec85d93c7"
+          },
+          {
+            "name" : "Okkiyam Thuraipakkam",
+            "url" : "PG-in-okkiyam-thuraipakkam-chennai-8fe2568c06"
+          },
+          {
+            "name" : "Sholinganallur",
+            "url" : "PG-in-sholinganallur-chennai-19fd9e81d5"
+          },
+          {
+            "name" : "Velachery",
+            "url" : "PG-in-velachery-chennai-420e4d2bd4"
+          }
+        ],
+        "url" : "PG-in-chennai-7e9e08ac1e"
+      },
+      {
+        "name" : "Kolkata",
+        "locations" : [
+          {
+            "name" : "Bhawanipur",
+            "url" : "PG-in-bhawanipur-kolkata-6a9d71053b"
+          },
+          {
+            "name" : "Garia",
+            "url" : "PG-in-garia-kolkata-67f6ff4a14"
+          },
+          {
+            "name" : "Jadavpur",
+            "url" : "PG-in-jadavpur-kolkata-cadd91c180"
+          },
+          {
+            "name" : "Newtown",
+            "url" : "PG-in-newtown-kolkata-ce5fa1fe92"
+          }
+        ],
+        "url" : "PG-in-kolkata-11e61baf54"
+      }
+    ],
+
+    "read_more" : [
+      {
+        "question" : "About Grabhouse",
+        "answer" : "Founded in July 2013, Grabhouse is India's first 100% broker free online rental platform, which aims to solve real estate problems through technology. We offer personalized services to all the users to help them find suitable flats on rent along with compatible flatmates. In the past two years, Grabhouse has managed to build a team of 100+ efficient employees, who give their best to improve the user experience and help them find their desired apartments and paying guests."
+      },
+      {
+        "question" : "What drives us?",
+        "answer" : "We are driven by the motivation and appreciation we get from our customers. Thousands of youngsters look for apartments on rents and most of them are new to the city. That’s where we come in play. We, at Grabhouse, strive hard to remove the middleman from the rental real estate industry and bring transparency in the process and the same can be achieved by the best technology and design. We do not mind going an extra mile if we see the light. The biggest challenge we face is that the whole house renting market is dominated by brokers. We have an efficient system that enables us to block brokers or any middleman. It enhances the user experience and helps them find PGs and flats on rent without paying any brokerage."
+      },
+      {
+        "question" : "Our USP",
+        "answer" : "We are India’s first house renting portal that offers a completely broker free platform to find houses and paying guests on rent.The transparency in our system ensures a unique user experience for all the our customers. We also make sure that the online house renting experience is not a painful one for our users. The sole purpose of Grabhouse is to make house renting as easy and as broker free as possible. We not only help people in renting a flat but also give our 100% to help them find a great deal."
+      }
+    ]
+  }
+}

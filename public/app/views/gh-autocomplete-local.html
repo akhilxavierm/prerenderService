@@ -1,0 +1,8 @@
+<div class="location-dropdown">
+  <input name="location" type="text" placeholder="{{map.placeHolder}}" id="mapSearchBar" ng-model="mapSearch" typeahead-min-length="1" typeahead-on-select="onSelect($item, $model, $label)" typeahead="address.full_name for address in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control" autocomplete="off" required />
+  <i class="fa fa-search"></i>
+  <div class="location-error" data-ng-show="showError===undefined?searchError:showError" data-ng-if="postReqError===undefined || postReqError.location===null">
+    <i class="fa fa-warning"></i>
+    <div id="locError" style="display: inline-block">{{gherror}}</div>
+  </div>
+</div>

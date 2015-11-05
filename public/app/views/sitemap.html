@@ -1,0 +1,12 @@
+<div class="site-map-container">
+  <h1>SITEMAP</h1>
+  <section class="clearfix" data-ng-repeat="sm in ::data">
+    <h2>{{::sm.header}}</h2>
+    <div class="city-section clearfix" data-ng-repeat="city in ::sm.cities | filter:{key:citykey}">
+      <h3>{{::city.name}}</h3><a href='{{::city.url}}' data-ng-if="showAllLink && city.url"> View all areas &gt; </a>
+      <ul class='clearfix'>
+        <li data-ng-repeat="area in ::city.areas"><a title='{{::area.name}}' href='{::area.url}}'><i class='fa fa-map-marker'></i>{{::area.name}}</a></li>
+      </ul>
+    </div>
+  </section>
+</div>

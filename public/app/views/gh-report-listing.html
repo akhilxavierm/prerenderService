@@ -1,0 +1,27 @@
+<div class="actions-block report-block">
+    <div ng-click="showReportList = true;" class="action-btns report-trigger" data-ng-class="{'active' : showReportList,'hidden':hideReportList}" modalaction="no">
+        <i class="fa fa-flag-o"></i> <span ng-show="showReportText">Report this listing</span>
+    </div>
+    <div class="report-wrap report-list" ng-class="{'active' : showReportList}">
+        <label>
+            <input type="radio" data-ng-model="reportComplaintMsg" name="report-type" value="broker is involved">
+            <span class="radio-style"></span>
+            <span>Broker is involved</span>
+        </label>
+        <label>
+            <input type="radio" data-ng-model="reportComplaintMsg" name="report-type" data-ng-checked="true" value="not available">
+            <span class="radio-style"></span>
+            <span>Property already taken</span>
+        </label>
+        <label>
+            <input type="radio" data-ng-model="reportComplaintMsg" name="report-type" value="wrong information">
+            <span class="radio-style"></span>
+            <span>Wrong information</span>
+        </label>
+        <div class="report-actions">
+            <span class="cancel-btn" data-ng-click="showReportList = false;">CANCEL</span>
+            <input type="button" class="report-btn" value="REPORT" data-ng-click="reportListing(listings)" />
+        </div>
+    </div>
+    <div class="report-feedback" data-ng-class="{'hidden':noReportedText}">{{::reportedText}}</div>
+</div>

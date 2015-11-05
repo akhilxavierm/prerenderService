@@ -1,0 +1,228 @@
+<div class="nav-filters">
+  <div class="row filters-container">
+    <div class="accom-type">
+      <div class="filter-head">
+        Looking for a
+      </div>
+      <div class="filter-body clearfix">
+        <label class="accom-type-flat">
+          <input type="checkbox" name="accomType" class="filter-checkbox" data-ng-checked="categories.indexOf('Flat') >= 0" ng-click="updateFilters(categories, 'Flat', 'checkbox')" />
+          <span class="checkbox-style"><i class="fa fa-check"></i></span> Full Flat
+        </label>
+        <label class="accom-type-room">
+          <input type="checkbox" name="accomType" class="filter-checkbox" data-ng-checked="categories.indexOf('Room') >= 0" ng-click="updateFilters(categories, 'Room', 'checkbox')" />
+          <span class="checkbox-style"><i class="fa fa-check"></i></span> Roommates
+        </label>
+        <label class="accom-type-pg">
+          <input type="checkbox" name="accomType" class="filter-checkbox" data-ng-checked="categories.indexOf('PG') >= 0" ng-click="updateFilters(categories, 'PG', 'checkbox')" />
+          <span class="checkbox-style"><i class="fa fa-check"></i></span> PG
+        </label>
+      </div>
+    </div>
+    <div class="budget-range clearfix">
+      <div class="filter-head">
+        with budget
+      </div>
+      <!-- <div ng-controller="slider" class="filter-body">
+                    <div class="range-val" data-ng-bind="budget.min | formatMoney"></div>
+                    <input ng-model="value" type="hidden" id="mySlider" slider options="options" />
+                    <div class="range-val" data-ng-bind="budget.max | formatMoney"></div>
+                </div>
+                 -->
+    </div>
+    <div class="more-filters">
+      <div class="mf-trigger" data-ng-click="showfilter()">
+        <span>more filters</span>
+        <i class="fa fa-caret-down"></i>
+      </div>
+      <div class="more-filters-block" data-ng-class="{'active' : filterActive}">
+        <div class="filters-header">Refine your search<span data-ng-click="closefilter()">&times;</span>
+        </div>
+        <div role="tabpanel" class="filters-tab">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active" ng-class="{'filter-disabled':categories.indexOf('Flat') === -1}" change-tabs="morefilters" targ-content="#mf-fullflat" accom-type="Flat">
+              <a data-targTab="mf-fullflat" aria-controls="fullflats">FULL FLATS</a><span>This Acoommodation type is not selected</span>
+            </li>
+            <li role="presentation" ng-class="{'filter-disabled':categories.indexOf('Room') === -1}" change-tabs="morefilters" targ-content="#mf-roommates" accom-type="Room">
+              <a data-targTab="mf-roommates" aria-controls="rooms">ROOMMATES</a><span>This Acoommodation type is not selected</span>
+            </li>
+            <li role="presentation" ng-class="{'filter-disabled':categories.indexOf('PG') === -1}" change-tabs="morefilters" targ-content="#mf-pg" accom-type="PG">
+              <a data-targTab="mf-pg" aria-controls="pghostel">PG</a><span>This Acoommodation type is not selected</span>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="mf-options tab-pane fade in active" id="mf-fullflat">
+              <div class="form-group">
+                <label>BHK Type</label>
+                <div class="btn-group flat-btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.flatType.indexOf('1 RK') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.flatType.indexOf('1 RK') >= 0" ng-click="updateFilters(flat.flatType, '1 RK')">1 RK
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.flatType.indexOf('1 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.flatType.indexOf('1 BHK') >= 0" ng-click="updateFilters(flat.flatType, '1 BHK')">1 BHK
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.flatType.indexOf('2 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.flatType.indexOf('2 BHK') >= 0" ng-click="updateFilters(flat.flatType, '2 BHK')">2 BHK
+                  </label>
+                  <label class="btn btn-row2 col-xs-4" data-ng-class="{'active':flat.flatType.indexOf('3 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.flatType.indexOf('3 BHK') >= 0" ng-click="updateFilters(flat.flatType, '3 BHK')">3 BHK
+                  </label>
+                  <label class="btn btn-row2 col-xs-4" data-ng-class="{'active':flat.flatType.indexOf('4 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.flatType.indexOf('4 BHK') >= 0" ng-click="updateFilters(flat.flatType, '4 BHK')">4 BHK
+                  </label>
+                  <label class="btn btn-row2 col-xs-4" data-ng-class="{'active':flat.flatType.indexOf('4+ BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.flatType.indexOf('4+ BHK') >= 0" ng-click="updateFilters(flat.flatType, '4+ BHK')">4+ BHK
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Furnishing Type</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.furnishType.indexOf('Unfurnished') >= 0}">
+                    <input type="checkbox" ng-click="updateFilters(flat.furnishType, 'Unfurnished')" data-ng-checked="flat.furnishType.indexOf('Unfurnished') >= 0">Unfurnished
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.furnishType.indexOf('Semi Furnished') >= 0}">
+                    <input type="checkbox" ng-click="updateFilters(flat.furnishType, 'Semi Furnished')" data-ng-checked="flat.furnishType.indexOf('Semi Furnished') >= 0">Semi Furnished
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.furnishType.indexOf('Full Furnished') >= 0}">
+                    <input type="checkbox" ng-click="updateFilters(flat.furnishType, 'Full Furnished')" data-ng-checked="flat.furnishType.indexOf('Full Furnished') >= 0">Fully Furnished
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Available for</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.familyType.indexOf('Family') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.familyType.indexOf('Family') >= 0" ng-click="updateFilters(flat.familyType, 'Family')">Family
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':flat.familyType.indexOf('Individual') >= 0}">
+                    <input type="checkbox" data-ng-checked="flat.familyType.indexOf('Individual') >= 0" ng-click="updateFilters(flat.familyType, 'Individual')">Individual
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="mf-options tab-pane fade in" id="mf-roommates">
+              <div class="form-group">
+                <label>Gender</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-2" data-ng-class="{'active':room.gender.indexOf('Male') >= 0}">
+                    <input type="radio" name="ff-gender" id="ff-gender-1" data-ng-checked="room.gender.indexOf('Male') >= 0" ng-click="updateFilters(room.gender, 'Male', 'radio')">Male
+                  </label>
+                  <label class="btn col-xs-2" data-ng-class="{'active':room.gender.indexOf('Female') >= 0}">
+                    <input type="radio" name="ff-gender" id="ff-gender-2" data-ng-checked="room.gender.indexOf('Female') >= 0" ng-click="updateFilters(room.gender, 'Female', 'radio')">Female
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>BHK Type</label>
+                <div class="btn-group flat-btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.flatType.indexOf('1 RK') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.flatType.indexOf('1 RK') >= 0" ng-click="updateFilters(room.flatType, '1 RK')">1 RK
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.flatType.indexOf('1 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.flatType.indexOf('1 BHK') >= 0" ng-click="updateFilters(room.flatType, '1 BHK')">1 BHK
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.flatType.indexOf('2 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.flatType.indexOf('2 BHK') >= 0" ng-click="updateFilters(room.flatType, '2 BHK')">2 BHK
+                  </label>
+                  <label class="btn btn-row2 col-xs-4" data-ng-class="{'active':room.flatType.indexOf('3 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.flatType.indexOf('3 BHK') >= 0" ng-click="updateFilters(room.flatType, '3 BHK')">3 BHK
+                  </label>
+                  <label class="btn btn-row2 col-xs-4" data-ng-class="{'active':room.flatType.indexOf('4 BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.flatType.indexOf('4 BHK') >= 0" ng-click="updateFilters(room.flatType, '4 BHK')">4 BHK
+                  </label>
+                  <label class="btn btn-row2 col-xs-4" data-ng-class="{'active':room.flatType.indexOf('4+ BHK') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.flatType.indexOf('4+ BHK') >= 0" ng-click="updateFilters(room.flatType, '4+ BHK')">4+ BHK
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Room Type</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.roomType.indexOf('Sharing') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.roomType.indexOf('Sharing') >= 0" ng-click="updateFilters(room.roomType, 'Sharing')">Sharing Room
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.roomType.indexOf('Individual') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.roomType.indexOf('Individual') >= 0" ng-click="updateFilters(room.roomType, 'Individual')">Individual Room
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.roomType.indexOf('Common Hall') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.roomType.indexOf('Common Hall') >= 0" ng-click="updateFilters(room.roomType, 'Common Hall')">Common Hall
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Furnishing Type</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.furnishType.indexOf('Unfurnished') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.furnishType.indexOf('Unfurnished') >= 0" ng-click="updateFilters(room.furnishType, 'Unfurnished')">Unfurnished
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.furnishType.indexOf('Semi Furnished') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.furnishType.indexOf('Semi Furnished') >= 0" ng-click="updateFilters(room.furnishType, 'Semi Furnished')">Semi Furnished
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':room.furnishType.indexOf('Full Furnished') >= 0}">
+                    <input type="checkbox" data-ng-checked="room.furnishType.indexOf('Full Furnished') >= 0" ng-click="updateFilters(room.furnishType, 'Full Furnished')">Fully Furnished
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="mf-options tab-pane fade in" id="mf-pg">
+              <div class="form-group">
+                <label>Gender</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-2" data-ng-class="{'active':room.gender.indexOf('Male') >= 0}">
+                    <input type="radio" name="ff-gender" id="ff-gender-1" data-ng-checked="room.gender.indexOf('Male') >= 0" ng-click="updateFilters(room.gender, 'Male', 'radio')">Male
+                  </label>
+                  <label class="btn col-xs-2" data-ng-class="{'active':room.gender.indexOf('Female') >= 0}">
+                    <input type="radio" name="ff-gender" id="ff-gender-2" data-ng-checked="room.gender.indexOf('Female') >= 0" ng-click="updateFilters(room.gender, 'Female', 'radio')">Female
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Meals</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':pg.meals.indexOf('Breakfast') >= 0}">
+                    <input type="checkbox" data-ng-checked="pg.meals.indexOf('Breakfast') >= 0" ng-click="updateFilters(pg.meals, 'Breakfast')">Breakfast
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':pg.meals.indexOf('Lunch') >= 0}">
+                    <input type="checkbox" data-ng-checked="pg.meals.indexOf('Lunch') >= 0" ng-click="updateFilters(pg.meals, 'Lunch')">Lunch
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':pg.meals.indexOf('Dinner') >= 0}">
+                    <input type="checkbox" data-ng-checked="pg.meals.indexOf('Dinner') >= 0" ng-click="updateFilters(pg.meals, 'Dinner')">Dinner
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>PG Type</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':pg.pgType.indexOf('Individual') >= 0}">
+                    <input type="checkbox" data-ng-checked="pg.pgType.indexOf('Individual') >= 0" ng-click="updateFilters(pg.pgType, 'Individual')">Individual
+                  </label>
+                  <label class="btn col-xs-4" data-ng-class="{'active':pg.pgType.indexOf('Sharing') >= 0}">
+                    <input type="checkbox" data-ng-checked="pg.pgType.indexOf('Sharing') >= 0" ng-click="updateFilters(pg.pgType, 'Sharing')">Sharing
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Available for</label>
+                <div class="btn-group">
+                  <label class="btn col-xs-4" data-ng-class="{'active':pg.workType.indexOf('Student') >= 0}">
+                    <input type="radio" name="pg-available" data-ng-checked="pg.workType.indexOf('Student') >= 0" ng-click="updateFilters(pg.workType, 'Student', 'radio')">Student
+                  </label>
+                  <label class="btn col-xs-6" data-ng-class="{'active':pg.workType.indexOf('Working') >= 0}">
+                    <input type="radio" name="pg-available" data-ng-checked="pg.workType.indexOf('Working') >= 0" ng-click="updateFilters(pg.workType, 'Working', 'radio')">Working Professional
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mf-actions-block clearfix">
+          <div class="mf-reset" ng-click="resetFilters()"><i class="fa fa-undo"></i> Reset</div>
+          <div class="mf-cancel" data-ng-click="closefilter()"><i class="fa fa-times"></i> Cancel
+          </div>
+          <input type="submit" data-ng-click="applyChanges(0)" value="Apply filters" class="mf-apply" addorremove=".light-overlay|open|.more-filters-block|active" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

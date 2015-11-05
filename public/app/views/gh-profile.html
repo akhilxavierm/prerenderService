@@ -1,0 +1,105 @@
+<div class="modal-window profile-modal modal-show" data-ng-if="profileActive">
+  <div class="modal-wrap">
+    <div class="modal-close profile-close" data-ng-click="closeProfileModal()">&times;</div>
+    <div class="settings-wrap">
+      <!--header-->
+      <header>
+        <div>Profile Settings</div>
+      </header>
+      <!--header ends-->
+      <form name="profileForm" novalidate/>
+      <div class="content-wrap clearfix">
+        <div class="dp-block">
+          <div class="dp-img">
+            <img ng-src="{{profileData.avatarUrl}}" alt="{{profileData.displayName}}" id="img-hold">
+          </div>
+          <label class="dp-change">
+            <input name="profile-image" type="file" id="profile-img" name="file" onchange="angular.element(this).scope().uploadFile(this.files)" accept="image/* ">
+            <i class="fa fa-pencil"></i>
+            <span>Change picture</span>
+          </label>
+        </div>
+        <div class="form form-wrap ">
+          <div class="form-group clearfix">
+            <div class="input-50">
+              <label for="">First name</label>
+              <input type="text" class="form-control" name="firstName" tabindex="1" placeholder="First name" ng-model="profileData.firstName" ng-pattern="/[a-zA-Z0-9]$/" required maxlength="15">
+              <span data-ng-if="profileForm.$submitted || profileForm.firstName.$touched">
+
+                            <span class="help-block"
+                                  data-ng-if="profileForm.firstName.$error.required">Please enter first name.</span>
+              <span class="help-block" data-ng-if="profileForm.firstName.$error.maxLength">The limit is 15 char.</span>
+              <span class="help-block" data-ng-if="profileForm.firstName.$error.pattern">First name cannot have special charater</span>
+              </span>
+            </div>
+            <div class="input-50">
+              <label for="">Last name</label>
+              <input type="text" class="form-control" name="lastName" tabindex="2" placeholder="Last name" ng-model="profileData.lastName" ng-pattern="/[a-zA-Z0-9]$/" required maxlength="20">
+              <span data-ng-if="profileForm.$submitted || profileForm.lastName.$touched">
+                            <span class="help-block" data-ng-if="profileForm.lastName.$error.required">Please enter last name.</span>
+              <span class="help-block" data-ng-if="profileForm.lastName.$error.maxLength">The limit is 15 char.</span>
+              <span class="help-block" data-ng-if="profileForm.lastNamegma.$error.pattern">Last name cannot not have special character</span>
+              <span class="help-block" data-ng-if="profileForm.lastName.$error.pattern">Only aplha numeric.</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="">Primary Email</label>
+            <input type="email" class="form-control" name="uemail" tabindex="3" placeholder="hello@example.com" ng-model="profileData.email" required>
+            <span data-ng-if="profileForm.$submitted || profileForm.uemail.$touched">
+            <span class="help-block" ng-show="submitted && errors.duplicateEmail != ''">{{errors.duplicateEmail}}</span>
+            <span class="help-block" data-ng-if="profileForm.uemail.$error.required">Please enter email.</span>
+            <span class="help-block" data-ng-if="profileForm.uemail.$error.email">Please enter valid email id.</span>
+            <span class="help-block" data-ng-if="profileForm.uemail.$error.exists">Email id already exist</span>
+            </span>
+            <span class="help-block account-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="">Mobile number</label>
+            <div class="input-group">
+              <span class="input-group-addon">+91</span>
+              <input type="text" class="form-control" placeholder="9988776655" name="umobile" tabindex="4" ng-model="profileData.mobile" required minlength="10" maxlength="10" ng-pattern="/^(\d)+$/">
+              <span data-ng-if="profileForm.$submitted || profileForm.umobile.$touched">
+              <span class="help-block" ng-show="submitted && errors.duplicatePhone != ''">{{errors.duplicatePhone}}</span>
+              <span class="help-block" data-ng-if="profileForm.umobile.$error.required">Please enter mobile.</span>
+              <span class="help-block" data-ng-if="profileForm.umobile.$error.minlength">Please enter valid mobile number.</span>
+              <span class="help-block" data-ng-if="profileForm.umobile.$error.maxlength">Please enter valid mobile number.</span>
+              <span class="help-block" data-ng-if="profileForm.umobile.$error.pattern">Digits only.</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="">Gender</label>
+            <div class="account-radio">
+              <label>
+                <input type="radio" name="gender" value="1" ng-model="profileData.gender" ng-required="!profileData.gender" checked tabindex="5">
+                <span>Male</span>
+              </label>
+              <label>
+                <input type="radio" name="gender" value="0" ng-model="profileData.gender" ng-required="!profileData.gender" tabindex="5">
+                <span>Female</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="">Profession</label>
+            <input type="text" class="form-control" tabindex="6" name="profession" ng-model="profileData.profession" placeholder="Eg: Student/Software developer" ng-pattern="/[a-zA-Z0-9]$/" required maxlength="50">
+            <span data-ng-if="profileForm.$submitted || profileForm.profession.$touched">
+
+                        <span class="help-block"
+                              data-ng-if="profileForm.profession.$error.required">Please enter your profession .</span>
+            <span class="help-block" data-ng-if="profileForm.profession.$error.pattern">Profession cannot have special charater.</span>
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="">Company</label>
+            <input type="text" class="form-control" ng-model="profileData.company" tabindex="7" placeholder="Eg: Grabhouse" maxlength="50">
+          </div>
+          <div class="btns-wrap btns-mob">
+            <button class="gh-btn update-btn" tabindex="8" data-ng-click="update(profileForm.$valid)">UPDATE AND CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="login-container login-show" data-ng-if="modalActive" id="signUpModal">
+  <div class="modal-form-content clearfix">
+    <div class="modal-close login-close" data-ng-click="closeAuthModal()">×</div>
+    <div id="login-modal" class="signup" ng-class="{'hidden': !authActive}">
+      <form name="loginForm" novalidate>
+        <div class="form-block">
+          <div class="modal-form-head">
+            Sign in
+          </div>
+          <div class="form-wrap">
+            <div class="input-wrap">
+              <div class="form-group">
+                <input type="text" class="form-control" name="userName" maxlength="50" placeholder="Email / Mobile" tabindex="1" ng-model="signin.userid" ng-pattern="/[a-zA-Z0-9\@]+$/" required>
+                <span data-ng-if="loginForm.$submitted || loginForm.userName.$touched">
+                    <span class="help-block" data-ng-if="loginForm.userName.$error.required">Email / Mobile cannot be blank.</span>
+                <span class="help-block" data-ng-if="loginForm.userName.$error.pattern">Enter a valid username
+                    </span>
+                </span>
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="input-wrap">
+              <div class="form-group">
+                <input type="password" class="form-control" name="password" minlength="8" placeholder="Password" tabindex="2" ng-model="signin.password" required>
+                <span data-ng-if="loginForm.$submitted || loginForm.userName.$touched">
+                    <span class="help-block" data-ng-if="loginForm.password.$error.required">Password cannot be blank.</span>
+                <span class="help-block" data-ng-if="loginForm.password.$error.minlength">Minimum 8 characters.</span>
+                </span>
+                <p class="help-block help-block-error" ng-show="loginFailError">Username and password do not match</p>
+              </div>
+            </div>
+            <div class="remember-me">
+              <label class="remember-trigger" for="remember-id">
+                <input type="checkbox" id="remember-id" checked="">
+                <i></i>
+                <span>Remember me</span>
+              </label>
+            </div>
+            <div class="remember-me"></div>
+            <div class="btn-wrap">
+              <button id="login" class="auth-btn" tabindex="3" data-ng-click="signin(loginForm.$valid)">SIGN IN</button>
+            </div>
+          </div>
+          <div class="signin-toggle">
+            <a href="/user/forgotpassword" class="forgot-password">Forgot password?</a>
+          </div>
+          <div class="signin-toggle">
+            New to Grabhouse? <a href="/user/signup"><span class="toggleForm">Sign up</span></a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="signup-modal" class="signup" ng-class="{'hidden': authActive}">
+      <form name="signupForm" novalidate>
+        <div class="form-block">
+          <div class="modal-form-head">
+            Sign up
+          </div>
+          <div class="form-wrap">
+            <div class="input-name clearfix">
+              <div class="input-wrap input-50">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="userfirstName" name="userfirstName" maxlength="15" placeholder="First Name" ng-model="signup.firstName" tabindex="1" ng-pattern="/[a-zA-Z0-9]+$/" required>
+                  <span data-ng-if="signupForm.$submitted || signupForm.userfirstName.$touched">
+                      <span class="help-block" data-ng-if="signupForm.userfirstName.$error.required">First Name cannot be blank.</span>
+                  <span class="help-block" data-ng-if="signupForm.userfirstName.$error.pattern">Enter a valid first name</span>
+                  </span>
+                  <p class="help-block" data-ng-bind="::signup.errors.userfirstName"></p>
+                </div>
+              </div>
+              <div class="input-wrap input-50">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="userlastName" name="userlastName" maxlength="20" placeholder="Last Name" ng-model="signup.lastName" tabindex="2" ng-pattern="/[a-zA-Z0-9]+$/" required>
+                  <span data-ng-if="signupForm.$submitted || signupForm.userlastName.$touched">
+                      <span class="help-block" data-ng-if="signupForm.userlastName.$error.required">Last Name cannot be blank.</span>
+                  <span class="help-block" data-ng-if="signupForm.userlastName.$error.pattern">Enter a valid last name</span>
+                  </span>
+                  <p class="help-block" data-ng-bind="::signup.errors.userlastName"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input-wrap">
+            <div class="form-group">
+              <input type="text" class="form-control" id="userMobile" name="userMobile" maxlength="10" placeholder="Mobile Number" ng-model="signup.mobile" tabindex="3" ng-pattern="/^[7-9][0-9]{9}$/" required>
+              <span data-ng-if="signupForm.$submitted || signupForm.userMobile.$touched">
+                    <span class="help-block" data-ng-if="signupForm.userMobile.$error.required">Mobile cannot be blank.</span>
+              <span class="help-block" data-ng-if="signupForm.userMobile.$error.pattern">Enter a valid mobile number</span>
+              </span>
+              <p class="help-block" data-ng-bind="::signup.errors.usedMobileError"></p>
+            </div>
+          </div>
+          <div class="input-wrap">
+            <div class="form-group">
+              <input type="email" id="userEmail" name="userEmail" class="form-control" placeholder="Enter email address" ng-model="signup.emailAddress" required maxlength="50" tabindex="4">
+              <span data-ng-if="signupForm.$submitted || signupForm.userEmail.$touched">
+                  <span class="help-block" data-ng-if="signupForm.userEmail.$error.required">Email cannot be blank.</span>
+              <span class="help-block" data-ng-if="signupForm.userEmail.$error.email">Please enter valid email id.</span>
+              </span>
+              <p class="help-block" data-ng-bind="::signup.errors.usedEmailError"></p>
+            </div>
+          </div>
+          <div class="input-wrap">
+            <div class="form-group">
+              <input id="userPassword" name="userPassword" type="password" class="form-control" minlength="8" required ng-model="signup.password" tabindex="5" placeholder="Password">
+              <span data-ng-if="signupForm.$submitted || signupForm.userPassword.$touched">
+                    <span class="help-block" data-ng-if="signupForm.userPassword.$error.required">Password cannot be blank.</span>
+              <span class="help-block" data-ng-if="signupForm.userPassword.$error.minlength">Minimum 8 characters.</span>
+              </span>
+              <p class="help-block help-block-error" data-ng-bind="::signup.errors.userPassword"></p>
+            </div>
+          </div>
+          <div class="input-wrap">
+            <div class="clearfix" id="UserLogin-gender">
+              <label class="radio-head">Gender</label>
+              <div class="login-radio">
+                <label>
+                  <input type="radio" name="userGender" value="1" ng-model="signup.gender">
+                  <span>MALE</span>
+                </label>
+                <label>
+                  <input type="radio" name="userGender" value="0" ng-model="signup.gender">
+                  <span>FEMALE</span>
+                </label>
+              </div>
+            </div>
+            <div class="help-block help-block-error" style="margin-left:110px"></div>
+          </div>
+          <div class="agree-text">By clicking sign up, I agree to the terms and conditions</div>
+          <div class="btn-wrap">
+            <button id="signup" class="auth-btn" tabindex="7" data-ng-click="signup(signupForm.$valid)">CREATE MY ACCOUNT</button>
+          </div>
+          <div class="signin-toggle">
+            Already have an account?
+            <a href="/user/signin">
+              <span class="toggleForm">Sign in</span>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <gh-social-signin></gh-social-signin>
+  </div>
+</div>

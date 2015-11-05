@@ -1,0 +1,48 @@
+<div class="contact-us-container">
+  <div class="map-outer-cont">
+    <div id="map-canvas" class="map-container">
+    </div>
+    <button id="map-reset"><i></i></button>
+  </div>
+  <div class="contact-us clearfix" data-ng-if="!submitSuccess">
+    <gh-contact-details></gh-contact-details>
+    <form class="form" name="contactForm" novalidate>
+      <h2 class="form-title">Have any query/feedback, feel free to write to us.</h2>
+      <div class="query-details">
+        <div>
+          <input type="text" name="name" placeholder="Enter your name" data-ng-model="name" required />
+          <div data-ng-if="submitted">
+            <span data-ng-if="contactForm.name.$error.required && formError" data-ng-bind="::formErrorMsgs.name.required"></span>
+          </div>
+        </div>
+        <div>
+          <input type="text" name="contactNo" placeholder="Contact Number" ng-pattern="/^[7|8|9]{1}([0-9]+)?$/" data-ng-model="contactNo" minlength="10" maxlength="10" required/>
+          <div data-ng-if="submitted">
+            <span data-ng-if="contactForm.contactNo.$error.required && formError" data-ng-bind="::formErrorMsgs.contactNo.required"></span>
+            <span data-ng-if="contactForm.contactNo.$dirty && contactForm.contactNo.$error.pattern" data-ng-bind="::formErrorMsgs.contactNo.invalid"></span>
+          </div>
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Email id" data-ng-model="email" ng-pattern="/^[a-zA-Z0-9]+(\@){1}/" required />
+          <div data-ng-if="submitted">
+            <span data-ng-if="contactForm.email.$error.required && formError" data-ng-bind="::formErrorMsgs.email.required"></span>
+            <span data-ng-if="contactForm.email.$dirty && contactForm.email.$error.pattern" data-ng-bind="::formErrorMsgs.email.invalid"></span>
+          </div>
+        </div>
+      </div>
+      <div class="text-msg-container">
+        <textarea name="message" placeholder="Your messsage" data-ng-model="message" required></textarea>
+        <div data-ng-if="submitted">
+          <span data-ng-if="contactForm.message.$error.required && formError">{{formErrorMsgs.message.required}}</span>
+        </div>
+      </div>`
+      <input type="submit" value="Send" data-ng-click="sendQuery(contactForm.$valid);" />
+    </form>
+  </div>
+  <div class="contact-us clearfix" data-ng-if="submitSuccess">
+    <form class="form">
+      <h2 class="form-title">Message Sent!!</h2>
+      <h2 class="form-title">Thank you for contacting us. We will get back to you soon.</h2>
+    </form>
+  </div>
+</div>

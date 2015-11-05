@@ -1,0 +1,246 @@
+<div class="list-view-page">
+  <div class="main clearfix">
+    <div class="list-view">
+      <div class="search-bar location-dropdown">
+        <gh-autocomplete></gh-autocomplete>
+      </div>
+      <div class="view-toggle">
+        <div class="view-toggle-trigger">
+          <a href="/search/map">Map view</a>
+        </div>
+      </div>
+      <div role="tabpanel">
+        <uib-tabset class="list-view-tabs">
+          <uib-tab heading="List of properties">
+            <div class="sort-bar">
+              <div class="location-text">
+              </div>
+              <div class="pull-right sort-filters">
+                <div class="sort-trigger">
+                  <span class="sort-addon">Sort by</span>
+                  <span class="selected-sort" data-ng-bind="::sortText"></span>
+                  <i class="fa fa-sort-desc"></i>
+                </div>
+                <div class="sort-option-wrap">
+                  <ul class="sort-list">
+                    <li class="sort-option" sort-options="sortOptions.sortText" sort-value="sortOptions.sortValue" data-ng-bind="::sortText" data-ng-repeat="sortOptions in ::sortOptionsToSelect track by $index"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="nr-block" data-ng-if="false">
+              <div class="no-results-head">
+                <img src="../images/noresults.png" alt="">
+                <div class="noresult-msg">You have a very unique taste.</div>
+                <div class="noresult-msg">Please <a href="javascript:void(0);" data-ng-click="postYourRequirement()">post your requirements</a> and we"ll get back to you shortly!</div>
+              </div>
+            </div>
+            <div class="list-item-outer" data-ng-repeat="listingInfo in ::(listings.recommendations.slice(listingStart) | limitTo : itemsPerPage) track by $index">
+              <div class="list-item">
+                <div class="list-item-inner clearfix">
+                  <div class="thumbnail-block">
+                    <img src="../images/house-200.jpg" alt="" />
+                  </div>
+                  <div class="details-block">
+                    <div class="clearfix details-row1">
+                      <div class="pull-left">
+                        <a href="/moreinfo" class="list-more-info" target="_blank"><h2 data-ng-bind="::listingInfo.details.title"></h2></a>
+                        <div class="available-for">
+                          Available for <span data-ng-bind="::listingInfo.details.familyType.join(', ')"></span>
+                        </div>
+                      </div>
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Rent</label>
+                        <div class="house-rent">
+                          <span>Rs. </span>
+                          <span data-ng-bind="::listingInfo.details.rent"></span> per month
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix address-block">
+                      <label for="" class="detail-label">Address</label>
+                      <h3 class="house-address" data-ng-bind="::listingInfo.details.location.name"></h3>
+                    </div>
+                    <div class="clearfix details-row3">
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Security Deposit</label>
+                        <div class="detail-value">Rs. <span data-ng-bind="::listingInfo.details.deposit"></span></div>
+                      </div>
+                      <!-- for flat -->
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Available From</label>
+                        <div class="detail-value" data-ng-bind="::listingInfo.details.availableFrom"></div>
+                      </div>
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Furnishing Status</label>
+                        <div class="detail-value" data-ng-bind="::listingInfo.details.furnishType"></div>
+                      </div>
+                      <!-- for flat -->
+                      <!-- for pg -->
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Meals included From</label>
+                        <div class="detail-value">Breakfast, Dinner
+                        </div>
+                      </div>
+                      <!-- for pg -->
+                    </div>
+                  </div>
+                  <div class="pull-right actions-block">
+                    <gh-short-list-icon></gh-short-list-icon>
+                    <gh-report-listing></gh-report-listing>
+                    <div class="posted-time">2 weeks ago</div>
+                    <gh-contact-owner-btn></gh-contact-owner-btn>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pagination-wrap">
+              <div class="pagination-text">Showing
+                <span class="start-count" data-ng-bind="::listingStart+1"></span> to <span class="end-count" data-ng-bind="::(listingStart+5)<listings.count?(listingStart+5):listings.count">10</span> out of <span class="total-count" data-ng-bind="::listings.count"></span> <span>results</span>
+              </div>
+              <div class="pagination-outer">
+                <uib-pagination gh-pagination-block total-items="listings.count" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" previous-text="&lt;" next-text="&gt;" first-text="&lt;&lt;" last-text="&gt;&gt;">
+                </uib-pagination>
+              </div>
+            </div>
+            <div class="other-links">
+              <label for="">Others looked at</label>
+              <ul class="clearfix">
+              </ul>
+            </div>
+          </uib-tab>
+          <uib-tab heading="Shortlisted">
+            <div class="nr-block" data-ng-if="false">
+              <img src="../images/noshortlisted.png" alt="" />
+              <div class="noresult-msg">Properties are biting nails to make it to your list. Shortlist what you like.</div>
+            </div>
+            <div class="list-item-outer">
+              <div class="list-item">
+                <div class="list-item-inner clearfix">
+                  <div class="thumbnail-block">
+                    <img src="../images/house-200.jpg" alt="" />
+                  </div>
+                  <div class="details-block">
+                    <div class="clearfix details-row1">
+                      <div class="pull-left">
+                        <a href="/moreinfo" class="list-more-info" target="_blank"><h2>Unfurnished 1 RK flat</h2></a>
+                        <div class="available-for">
+                          Available for<span>Roommate</span>
+                        </div>
+                      </div>
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Rent</label>
+                        <div class="house-rent">
+                          <span>Rs. </span>
+                          <span>12,000</span> per month
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix address-block">
+                      <label for="" class="detail-label">Address</label>
+                      <h3 class="house-address">ITI Layout Kere, HSR Layout, ITI Layout, Bengaluru, Karnataka, India</h3>
+                    </div>
+                    <div class="clearfix details-row3">
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Security Deposit</label>
+                        <div class="detail-value">Rs. 1,50,000</div>
+                      </div>
+                      <!-- for flat -->
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Available From</label>
+                        <div class="detail-value">23-Sep-2015</div>
+                      </div>
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Furnishing Status</label>
+                        <div class="detail-value">Unfurnished</div>
+                      </div>
+                      <!-- for flat -->
+                      <!-- for pg -->
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Meals included From</label>
+                        <div class="detail-value">Breakfast,Dinner
+                        </div>
+                      </div>
+                      <!-- for pg -->
+                    </div>
+                  </div>
+                  <div class="pull-right actions-block">
+                    <gh-short-list-icon></gh-short-list-icon>
+                    <gh-report-listing></gh-report-listing>
+                    <div class="posted-time">2 weeks ago</div>
+                    <gh-contact-owner-btn></gh-contact-owner-btn>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </uib-tab>
+          <uib-tab heading="Owners Contacted">
+            <div class="nr-block" data-ng-if="false">
+              <img src="../images/noleads.png" alt="" />
+              <div class="noresult-msg">The owners love heart to heart conversations. Call now.</div>
+            </div>
+            <div class="list-item-outer">
+              <div class="list-item">
+                <div class="list-item-inner clearfix">
+                  <div class="thumbnail-block">
+                    <img src="../images/house-200.jpg" alt="" />
+                  </div>
+                  <div class="details-block">
+                    <div class="clearfix details-row1">
+                      <div class="pull-left">
+                        <a href="/moreinfo" class="list-more-info" target="_blank"><h2>Unfurnished 1 RK flat</h2></a>
+                        <div class="available-for">
+                          Available for<span>Roommate</span>
+                        </div>
+                      </div>
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Rent</label>
+                        <div class="house-rent">
+                          <span>Rs. </span>
+                          <span>12,000</span> per month
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix address-block">
+                      <label for="" class="detail-label">Address</label>
+                      <h3 class="house-address">ITI Layout Kere, HSR Layout, ITI Layout, Bengaluru, Karnataka, India</h3>
+                    </div>
+                    <div class="clearfix details-row3">
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Security Deposit</label>
+                        <div class="detail-value">Rs. 1,50,000</div>
+                      </div>
+                      <!-- for flat -->
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Available From</label>
+                        <div class="detail-value">23-Sep-2015</div>
+                      </div>
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Furnishing Status</label>
+                        <div class="detail-value">Unfurnished</div>
+                      </div>
+                      <!-- for flat -->
+                      <!-- for pg -->
+                      <div class="pull-left">
+                        <label for="" class="detail-label">Meals included From</label>
+                        <div class="detail-value">Breakfast,Dinner
+                        </div>
+                      </div>
+                      <!-- for pg -->
+                    </div>
+                  </div>
+                  <div class="pull-right actions-block">
+                    <gh-short-list-icon></gh-short-list-icon>
+                    <gh-report-listing></gh-report-listing>
+                    <div class="posted-time">2 weeks ago</div>
+                    <gh-contact-owner-btn></gh-contact-owner-btn>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+    </div>
+  </div>
+</div>

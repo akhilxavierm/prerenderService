@@ -1,0 +1,178 @@
+<div class="search-page">
+  <div class="main">
+    <div class="map-outer">
+      <div class="input-group search-bar location-dropdown" id="">
+        <gh-autocomplete></gh-autocomplete>
+        <i data-ng-if="::loadingLocations" class="glyphicon glyphicon-refresh"></i>
+      </div>
+      <div class="location-error hidden">
+        <i class="fa fa-warning"></i>
+        <div id="locError" style="display: inline-block"></div>
+      </div>
+      <div class="view-toggle">
+        <div class="view-toggle-trigger">
+          <a href="/search/list">List view</a>
+        </div>
+      </div>
+      <div id="mapCanvas"></div>
+    </div>
+    <!--
+    <script type="text/ng-template" id="customTemplate.html">
+      <a>
+        <span bind-html-unsafe="match.label"></span>
+      </a>
+    </script>
+    -->
+    <!-- map ends -->
+    <!-- house-lists starts -->
+    <div class="list-view" style="height:800px;overflow-y:hidden;overflow-x:hidden">
+      <div role="tabpanel" class="list-tabs">
+        <uib-tabset>
+          <uib-tab heading="All results">
+            <div class="breadcrumb-bar">
+              <div class="all-breadcrumb">
+                <span class="alternate-breadcrumb hidden">You have <span data-ng-bind="::property"></span><span data-ng-bind="::breadcrumbCount"></span> properties</span>
+                <span class="resultsCount"><span data-ng-bind="::listings.recommendations.length">11</span> of <span data-ng-bind="::listings.recommendations.length">11</span><span> results</span></span>
+                <div class="pull-right breadcrumb-outer"><span class="breadcrumb-city" data-ng-bind="::breadCity">Bangalore</span>
+                  <!-- ngIf: breadLocation --><span data-ng-if="::breadLocation" class=""> &gt; </span>
+                  <!-- end ngIf: breadLocation -->
+                  <!-- ngIf: breadLocation --><span class=" breadcrumb-location " data-ng-if="breadLocation " data-ng-bind="::breadLocation ">Koramangala</span>
+                  <!-- end ngIf: breadLocation --><span class="breadcrumb-category "> &gt; Flat</span>
+                </div>
+              </div>
+            </div>
+            <div class="list-block listing ps-container ps-active-y " id="all-results " infinitescrolldir=" " afkl-image-container=" ">
+              <div class="list-block-inner" style="height:800px;" class="scrollme" ng-scrollbar rebuild-on="rebuild:me">
+                <!-- ngRepeat: listing in listingInfo -->
+                <div class="list-item-outer " data-ng-class="::{ 'handpicked' : listingInfo.details.isExclusive &amp;&amp; listingInfo.details.category=='PG' } " ng-repeat="listingInfo in listings.recommendations track by $index ">
+                  <div id="1444139090403143 " current-listing=" " data-ng-click="openCloseDetails($event,$index,listing) " data-ng-class="::{ 'visited': listingInfo.seen} ">
+                    <div class="details-block ">
+                      <div class="basic-details clearfix ">
+                        <div class="posted-time " ng-bind="::listingInfo.details.postedOn ">5 days ago</div>
+                        <div class="thumbnail-block ">
+                          <div class="house-img ">
+                            <div afkl-lazy-image="https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1444138999/web/listing/6C4St59Gf/3a146a869f73e5b9.jpg " class="afkl-lazy-wrapper "><img alt=" " class="afkl-lazy-image " src="https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1444138999/web/listing/6C4St59Gf/3a146a869f73e5b9.jpg "></div>
+                          </div>
+                        </div>
+                        <div class="details-content ">
+                          <h3 class="open-more-info " data-ng-class="::{'text-elip' : listingInfo.details.title.length > 32}" ng-bind="::listingInfo.details.title"></h3>
+                          <!-- ngIf: listingInfo.details.title.length>32 -->
+                          <div class="house-for"><span>Available for </span> <span ng-bind="::listingInfo.details.familyType.join(', ')"></span>
+                          </div>
+                          <div class="house-rent"><span>Rs. </span><span ng-bind="::listingInfo.details.rent">1,000</span> per month
+                          </div>
+                        </div>
+                        <div class="action-block">
+                          <span class="handpicked__tooltip"></span>
+                          <gh-short-list-icon></gh-short-list-icon>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end ngRepeat: listing in listingInfo -->
+                <!-- ngIf: listingCount!==0 && listingInfo.length !== listingCount -->
+                <div class="nr-block no-results">
+                  <div class="no-results-head">
+                    <img src="../images/noresults.png" alt="">
+                    <div class="nr-head">You have a very unique taste.</div>
+                    <div class="nr-head">Please <a href="javascript:void(0);" data-ng-click="noListingOpenPYR()">post your requirements</a> and we"ll get back to you shortly!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </uib-tab>
+          <uib-tab heading="Shortlisted">
+            <div class="breadcrumb-bar">
+              <div class="all-breadcrumb">
+                <span class="alternate-breadcrumb">You have <span data-ng-bind="::property"></span><span data-ng-bind="::breadcrumbCount"></span> properties</span>
+                <span class="resultsCount hidden"><span data-ng-bind="::listings.recommendations.length">11</span> of <span data-ng-bind="::listings.recommendations.length">11</span><span> results</span></span>
+                <div class="pull-right breadcrumb-outer hidden"><span class="breadcrumb-city" data-ng-bind="::breadCity">Bangalore</span>
+                  <!-- ngIf: breadLocation --><span data-ng-if="::breadLocation" class=""> &gt; </span>
+                  <!-- end ngIf: breadLocation -->
+                  <!-- ngIf: breadLocation --><span class=" breadcrumb-location " data-ng-bind="::breadLocation ">Koramangala</span>
+                  <!-- end ngIf: breadLocation --><span class="breadcrumb-category "> &gt; Flat</span>
+                </div>
+              </div>
+            </div>
+            <div class="list-block listing ps-container ps-active-y " id="all-results " infinitescrolldir=" " afkl-image-container=" ">
+              <div class="list-block-inner ">
+                <div class="list-item-outer ">
+                  <div class="list-item ">
+                    <div class="details-block ">
+                      <div class="basic-details clearfix ">
+                        <div class="posted-time ">2 weeks ago</div>
+                        <div class="thumbnail-block ">
+                          <div class="house-img ">
+                            <div afkl-lazy-image="https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1444138999/web/listing/6C4St59Gf/3a146a869f73e5b9.jpg " class="afkl-lazy-wrapper "><img alt=" " class="afkl-lazy-image " src="https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1444138999/web/listing/6C4St59Gf/3a146a869f73e5b9.jpg "></div>
+                          </div>
+                        </div>
+                        <div class="details-content ">
+                          <h3 class="open-more-info " data-ng-class="::{'text-elip' : listingInfo.details.title.length > 32}">Unfurnished 1 BHK flat</h3>
+                          <!-- ngIf: listingInfo.details.title.length>32 -->
+                          <div class="house-for "><span>Available for </span> <span>Family, Individual</span>
+                          </div>
+                          <div class="house-rent "><span>Rs. </span><span>10,000</span> per month
+                          </div>
+                        </div>
+                        <div class="action-block ">
+                          <span class="handpicked__tooltip "></span>
+                          <gh-short-list-icon></gh-short-list-icon>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </uib-tab>
+          <uib-tab heading="Owners Contacted ">
+            <div class="breadcrumb-bar ">
+              <div class="all-breadcrumb ">
+                <span class="alternate-breadcrumb ">You have <span data-ng-bind="::property ">contacted </span><span data-ng-bind="::breadcrumbCount ">1</span> properties</span>
+                <span class="resultsCount hidden "><span data-ng-bind="::listings.recommendations.length ">11</span> of <span data-ng-bind="::listings.recommendations.length ">11</span><span> results</span></span>
+                <div class="pull-right breadcrumb-outer hidden "><span class="breadcrumb-city " data-ng-bind="::breadCity ">Bangalore</span>
+                  <!-- ngIf: breadLocation --><span data-ng-if="::breadLocation " class="> &gt; </span>
+        <!-- end ngIf: breadLocation -->
+        <!-- ngIf: breadLocation --><span class=" breadcrumb-location " data-ng-if="breadLocation " data-ng-bind="::breadLocation ">Koramangala</span>
+        <!-- end ngIf: breadLocation --><span class="breadcrumb-category "> &gt; Flat</span>
+      </div>
+    </div>
+  </div>
+  <div class="list-block listing ps-container ps-active-y " id="all-results " infinitescrolldir=" " afkl-image-container=" ">
+    <div class="list-block-inner ">
+      <div class="list-item-outer ">
+        <div class="list-item ">
+          <div class="details-block ">
+            <div class="basic-details clearfix ">
+              <div class="posted-time ">2 weeks ago</div>
+              <div class="thumbnail-block ">
+                <div class="house-img ">
+                  <div afkl-lazy-image="https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1444138999/web/listing/6C4St59Gf/3a146a869f73e5b9.jpg " class="afkl-lazy-wrapper "><img alt=" " class="afkl-lazy-image " src="https://res.cloudinary.com/grabhouse/image/private/t_fill_80_60/v1444138999/web/listing/6C4St59Gf/3a146a869f73e5b9.jpg "></div>
+                </div>
+              </div>
+              <div class="details-content ">
+                <h3 class="open-more-info " data-ng-class="::{ 'text-elip' : listingInfo.details.title.length> 32}">Unfurnished 1 BHK flat</h3>
+                  <!-- ngIf: listingInfo.details.title.length>32 -->
+                  <div class="house-for"><span>Available for </span> <span>Family, Individual</span>
+                  </div>
+                  <div class="house-rent"><span>Rs. </span><span>10,000</span> per month
+                  </div>
+                </div>
+                <div class="action-block">
+                  <span class="handpicked__tooltip"></span>
+                  <gh-short-list-icon></gh-short-list-icon>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+</uib-tab>
+</uib-tabset>
+</div>
+<gh-slider data-ng-if="showSlider"></gh-slider>
+</div>
+</div>
+</div>
